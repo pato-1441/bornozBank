@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../dist/output.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gradient-to-b from-green-400 to-cyan-900">
   <header>
-    <div class="navbar bg-lime-600 text-white">
+    <div class="navbar text-white">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -30,16 +30,17 @@
         </div>
         <div class="navbar-end">
           <a class="btn btn-outline text-white">Log In</a>
-          <a class="btn text-white bg-lime-300 border-none ml-2">Sign Up</a>
+          <a class="btn text-lime-600 bg-white border-none ml-2">Sign Up</a>
         </div>
       </div>
   </header>
-  <main class="container-fluid bg-white">
-    <div class="grid grid-rows-1 sm:grid-rows-2 grid-cols-1 sm:grid-cols-4 gap-6 p-10 text-white">
-      <div class="bg-lime-700 col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 rounded-full"><div class="text-center text-base sm:text-xl py-2 px-4">Bornoz Bank</div></div>
-      <div class="col-span-2 text-center"><div class="bg-lime-400 text-base sm:text-xl py-2 px-4 w-fit rounded-full">¡Bienvenido!</div></div>
-      <div class="col-span-2 text-center"><div class="bg-lime-600 text-base sm:text-xl py-2 px-4 rounded-full"> ¿Qué esperás para abrir tu cuenta?</div></div>
-  </div>
+  <main class="container-fluid h-screen">
+    <section class="bg-slate-300 mt-10 w-1/2 mx-auto">
+      <div id="welcome-card" class="">
+        <h2 class="text-black text-center text-3xl">¡Bienvenido!</h2>
+      </div>
+    </section>
   </main>
+  
 </body>
 </html>
