@@ -29,17 +29,41 @@
           </ul>
         </div>
         <div class="navbar-end">
-          <a class="btn btn-outline text-white">Log In</a>
-          <a class="btn text-lime-600 bg-white border-none ml-2">Sign Up</a>
+          <a class="btn text-cyan-900 hover:text-white bg-white hover:border-cyan-900 border-cyan-900 hover:bg-cyan-900 border-none ml-2">Registrarse</a>
         </div>
       </div>
   </header>
   <main class="container-fluid h-screen">
-    <section class="bg-slate-300 mt-10 w-1/2 mx-auto">
-      <div id="welcome-card" class="">
-        <h2 class="text-black text-center text-3xl">¡Bienvenido!</h2>
+    <!--arranca login-->
+    <section class="bg-white mt-10 w-96 mx-auto rounded-xl">
+      <div id="welcome-card" class="text-black">
+        <h2 class="text-green-400 text-center text-3xl pt-8">Bienvenido.</h2>
+        <div class="form">
+          <!--arranca login usuario-->
+          <div class="form-control w-full max-w-xs mx-auto pt-4">
+            <label class="label">
+              <span class="label-text">Nombre de usuario</span>
+            </label>
+            <input type="text" placeholder="ej. Pedrito845" class="input input-bordered w-full max-w-xs" />
+          </div>
+          <!--termina login usuario-->
+          <!--arranca login password-->
+          <div class="form-control w-full max-w-xs mx-auto">
+            <label class="label">
+              <span class="label-text">Contraseña</span>
+            </label>
+            <input type="text" placeholder="Escriba aqui" class="input input-bordered w-full max-w-xs" />
+            <label class="label">
+              <span class="label-text-alt"></span>
+              <span class="label-text-alt"><a href="#">¿Olvido su contraseña?</a></span>
+            </label>
+            <button class="btn btn-outline text-green-400 hover:text-white hover:border-green-400 border-green-400 hover:bg-green-400">Iniciar Sesion</button>
+          </div>
+          <!--termina login password-->
+        </div>
       </div>
     </section>
+    <!--termina login usuario-->
   </main>
   
 </body>
