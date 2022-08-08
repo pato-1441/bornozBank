@@ -8,8 +8,9 @@
   <title>Bornoz Bank</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;0,800;1,500&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2a09230c59.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;0,800;1,500&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/2a09230c59.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-gradient-to-b from-green-400 to-cyan-900 ">
@@ -18,11 +19,13 @@
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </label>
-          <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow-lg text-black bg-white rounded-box w-52">
+          <ul tabindex="0"
+            class="menu menu-compact dropdown-content mt-3 p-2 shadow-lg text-black bg-white rounded-box w-52">
             <li><a class="hover:bg-cyan-900 active:bg-cyan-900">Home</a></li>
             <li><a class="hover:bg-cyan-900 active:bg-cyan-900">Contactos</a></li>
             <li><a class="hover:bg-cyan-900 active:bg-cyan-900">Transferencias</a></li>
@@ -37,43 +40,62 @@
           <li><a class="active:bg-cyan-900">Transferencias</a></li>
         </ul>
       </div>
+      <!--arranca navbar end-->
       <div class="navbar-end">
-        <label for="my-modal-5" class="btn modal-button font-medium text-cyan-900 hover:text-white bg-white hover:border-cyan-900 border-cyan-900 hover:bg-cyan-900 border-none ml-2 shadow-lg rounded-box">Registrarse</label>
+        <label for="my-modal-5"
+          class="btn modal-button font-medium text-cyan-900 hover:text-white bg-white hover:border-cyan-900 border-cyan-900 hover:bg-cyan-900 border-none ml-2 shadow-lg rounded-box">Registrarse</label>
+        <!--toggle modal-->
         <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+        <!--arranca modal-->
         <div class="modal">
           <div class="modal-box w-11/12 sm:w-8/12 h-full max-w-5xl bg-white text-black flex flex-col">
             <h2 class="text-green-400 text-center text-3xl pt-4 font-semibold">Bornoz Bank</h2>
             <h2 class="text-gray-400 text-center text-2xl pt-4">Registrese aquí debajo gratis</h2>
-        <div class="form flex flex-col items-center">
-          <!--arranca register usuario-->
-          <div class="form-control w-full max-w-xs mx-auto pt-4 px-4">
-            <label class="label">
-              <span class="label-text">Nombre de usuario</span>
-            </label>
-            <input type="text" placeholder="Escriba aquí su nombre de usuario" class="input input-bordered w-full max-w-xs bg-white" />
-          </div>
-          <!--termina register usuario-->
-          <!--arranca register password-->
-          <div class="form-control w-full max-w-xs mx-auto px-4">
-            <label class="label">
-              <span class="label-text">Contraseña</span>
-            </label>
-            <input type="password" placeholder="Escriba aquí su contraseña"
-              class="input input-bordered w-full max-w-xs bg-white" />
-          </div>
-          <!--termina register password-->          
-        </div>
-            <div class="modal-action justify-center">
-              <label for="my-modal-5" class="btn w-1/3 mt-2 btn-outline text-green-400 hover:text-white hover:border-green-400 border-green-400 hover:bg-green-400">Registrarse</label>
+            <div class="form flex flex-col items-center">
+              <!--arranca register usuario-->
+              <div class="form-control w-full max-w-xs mx-auto pt-4 px-4">
+                <label class="label">
+                  <span class="label-text">Nombre de usuario</span>
+                </label>
+                <input required type="text" placeholder="Escriba aquí su nombre de usuario"
+                  class="input input-bordered w-full max-w-xs bg-white" />
+              </div>
+              <!--termina register usuario-->
+              <div class="form-control w-full max-w-xs mx-auto px-4">
+                <label class="label">
+                  <span class="label-text">Correo electrónico</span>
+                </label>
+                <input required type="email" placeholder="Escriba aquí su correo electrónico"
+                  class="input input-bordered w-full max-w-xs bg-white" />
+              </div>
+              <!--arranca register password-->
+              <div class="form-control w-full max-w-xs mx-auto px-4">
+                <label class="label">
+                  <span class="label-text">Contraseña</span>
+                </label>
+                <input required type="password" placeholder="Escriba aquí su contraseña"
+                  class="input input-bordered w-full max-w-xs bg-white" />
+              </div>
+              <!--termina register password-->
             </div>
+            <div class="modal-action">
+              <label for="my-modal-5"
+                class="btn btn-sm btn-circle absolute right-4 top-4 border-solid bg-transparent border-red-600 text-red-600 hover:bg-red-600 hover:text-white hover:border-none">X</label>
+            </div>
+            <button type="submit"
+              class="btn justify-center mx-40 mt-2 btn-outline text-green-400 hover:text-white hover:border-green-400 border-green-400 hover:bg-green-400">Registrarse</button>
           </div>
+          <!--termina modal box-->
         </div>
+        <!--termina modal-->
       </div>
+      <!--termina navbar end-->
     </div>
   </header>
   <main class="container-fluid h-screen">
     <!--arranca login-->
-    <section class="bg-white mt-10 pb-12 w-10/12 sm:w-8/12 md:w-6/12 lg:w-4/12 xl:w-4/12 2xl:w-3/12 mx-auto rounded-box shadow-lg">
+    <section
+      class="bg-white mt-10 pb-12 w-10/12 sm:w-8/12 md:w-6/12 lg:w-4/12 xl:w-4/12 2xl:w-3/12 mx-auto rounded-box shadow-lg">
       <div id="welcome-card" class="text-black">
         <h2 class="text-green-400 text-center text-3xl pt-8">¡Bienvenido!</h2>
         <div class="form flex flex-col items-center">
@@ -82,7 +104,8 @@
             <label class="label">
               <span class="label-text">Nombre de usuario</span>
             </label>
-            <input type="text" placeholder="Escriba aquí su nombre de usuario" class="input input-bordered w-full max-w-xs bg-white" />
+            <input required type="text" placeholder="Escriba aquí su nombre de usuario"
+              class="input input-bordered w-full max-w-xs bg-white" />
           </div>
           <!--termina login usuario-->
           <!--arranca login password-->
@@ -90,18 +113,18 @@
             <label class="label">
               <span class="label-text">Contraseña</span>
             </label>
-            <input type="password" placeholder="Escriba aquí su contraseña"
+            <input required type="password" placeholder="Escriba aquí su contraseña"
               class="input input-bordered w-full max-w-xs bg-white" />
             <label class="label">
               <span class="label-text-alt"><label class="label cursor-pointer">
-                <input type="checkbox" checked="checked" class="checkbox-xs checkbox-primary" />
-                <span class="label-text-alt ml-1">Recuérdame</span> 
-              </label></span>
+                  <input type="checkbox" checked="checked" class="checkbox-xs checkbox-primary" />
+                  <span class="label-text-alt ml-1">Recuérdame</span>
+                </label></span>
               <span class="label-text-alt"><a href="#">¿Olvido su contraseña?</a></span>
             </label>
           </div>
           <!--termina login password-->
-          <button
+          <button type="submit"
             class="w-1/3 mt-2 btn btn-outline text-green-400 hover:text-white hover:border-green-400 border-green-400 hover:bg-green-400">Iniciar
             Sesion</button>
         </div>
@@ -111,13 +134,16 @@
   </main>
   <footer class="footer footer-center p-5 bg-base-100 text-white">
     <div>
-      <p><span class="text-sm"> Desarrollado por:</span><br><span class="font-bold text-base">Patricio Albornoz</span></p> 
+      <p><span class="text-sm"> Desarrollado por:</span><br><span class="font-bold text-base">Patricio Albornoz</span>
+      </p>
       <p>Copyright © 2022 - Todos los derechos Reservados</p>
-    </div> 
+    </div>
     <div>
       <div class="grid grid-flow-col gap-4">
-        <a href="https://github.com/pato-1441" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github fa-2xl"></i></a>
-        <a href="https://www.linkedin.com/in/patoalbornoz/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+        <a href="https://github.com/pato-1441" target="_blank" rel="noopener noreferrer"><i
+            class="fa-brands fa-github fa-2xl"></i></a>
+        <a href="https://www.linkedin.com/in/patoalbornoz/" target="_blank" rel="noopener noreferrer"><i
+            class="fa-brands fa-linkedin fa-2xl"></i></a>
       </div>
     </div>
   </footer>
