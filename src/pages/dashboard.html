@@ -19,11 +19,13 @@
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </label>
-          <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow-lg text-black bg-white rounded-box w-52">
+          <ul tabindex="0"
+            class="menu menu-compact dropdown-content mt-3 p-2 shadow-lg text-black bg-white rounded-box w-52">
             <li><a class="hover:bg-cyan-900 active:bg-cyan-900">Home</a></li>
             <li><a class="hover:bg-cyan-900 active:bg-cyan-900">Contactos</a></li>
             <li><a class="hover:bg-cyan-900 active:bg-cyan-900">Transferencias</a></li>
@@ -39,10 +41,13 @@
         </ul>
       </div>
       <div class="navbar-end">
-        <a class="btn font-medium rounded-box text-red-600 hover:text-white bg-white border-none hover:bg-red-600 ml-2 shadow-lg">
+        <a
+          class="btn font-medium rounded-box text-red-600 hover:text-white bg-white border-none hover:bg-red-600 ml-2 shadow-lg">
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
+              <path fill-rule="evenodd"
+                d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                clip-rule="evenodd" />
             </svg>
           </div>
         </a>
@@ -53,19 +58,56 @@
   <main class="container-fluid h-screen flex justify-center">
     <!--arranca dashboard-->
     <section id="dashboard" class="mt-10 mb-10 p-10 w-11/12 bg-white rounded-box">
-      PAPAA
+      <div class="grid grid-cols-4 grid-rows-12 gap-12">
+        <!--balances-->
+        <!--texto bienvenida-->
+        <h1 class="text-black font-semibold text-3xl col-span-4">¡Bienvenido de vuelta (usuario)!</h1>
+        <!--fin texto bienvenida-->
+        <!--balance pesos-->
+        <div class="col-span-2 row-span-3 bg-gray-100 rounded-box flex flex-col justify-center items-center text-black">
+          <div class="text-3xl">ARS $14.500</div>
+        </div>
+        <!--termina balance pesos-->
+        <!--balance dolares-->
+        <div class="col-span-2 row-span-3 bg-gray-100 rounded-box flex justify-center items-center text-3xl text-black">
+          <div>USD $2.200</div>
+        </div>
+        <!--termina balance dolares-->
+        <!--terminan balances-->
+        <!--arranca movimientos-->
+        <div class="text-black">
+          <div class="text-2xl col-span-2 mb-4">Movimientos</div>
+          <div class="movimiento flex flex-row">
+            <!--avatar-->
+            <div class="avatar placeholder">
+              <div class="bg-neutral-focus text-neutral-content rounded-full w-12"><span class="text-lg">JOG</span></div>
+            </div>
+            <!--fin avatar-->
+            <!--datos movimiento-->
+            <div>Jesus Omar Garcia</div>
+            <!--movimiento-->
+            <div>-1.500</div>
+            <!--fin movimiento-->
+            <!--fin datos movimiento-->
+          </div>
+        </div>
+        <!--termina movimientos-->
+      </div>
     </section>
     <!--termina dashboard-->
   </main>
   <footer class="footer footer-center p-5 bg-base-100 text-white">
     <div>
-      <p><span class="text-sm"> Desarrollado por:</span><br><span class="font-bold text-base">Patricio Albornoz</span></p> 
+      <p><span class="text-sm"> Desarrollado por:</span><br><span class="font-bold text-base">Patricio Albornoz</span>
+      </p>
       <p>Copyright © 2022 - Todos los derechos Reservados</p>
-    </div> 
+    </div>
     <div>
       <div class="grid grid-flow-col gap-4">
-        <a href="https://github.com/pato-1441" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github fa-2xl"></i></a>
-        <a href="https://www.linkedin.com/in/patoalbornoz/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+        <a href="https://github.com/pato-1441" target="_blank" rel="noopener noreferrer"><i
+            class="fa-brands fa-github fa-2xl"></i></a>
+        <a href="https://www.linkedin.com/in/patoalbornoz/" target="_blank" rel="noopener noreferrer"><i
+            class="fa-brands fa-linkedin fa-2xl"></i></a>
       </div>
     </div>
   </footer>
