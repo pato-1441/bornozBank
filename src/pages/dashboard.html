@@ -57,14 +57,14 @@
   </header>
   <main class="container-fluid h-screen flex justify-center">
     <!--arranca dashboard-->
-    <section id="dashboard" class="mt-10 mb-10 p-10 w-11/12 bg-white rounded-box">
+    <section id="dashboard" class="mt-10 mb-10 p-10 w-11/12 h-fit bg-white rounded-box">
       <div class="grid grid-cols-4 grid-rows-12 gap-12">
         <!--balances-->
         <!--texto bienvenida-->
         <h1 class="text-black font-semibold text-3xl col-span-4">¡Bienvenido de vuelta (usuario)!</h1>
         <!--fin texto bienvenida-->
         <!--balance pesos-->
-        <div class="stats text-black col-span-2 row-span-3 bg-gray-100 rounded-box">
+        <div class="stats text-black col-span-4 md:col-span-2 row-span-3 bg-gray-100 rounded-box">
           <div class="stat">
             <div class="stat-title">Balance en pesos</div>
             <div class="stat-value">ARS $89.400</div>
@@ -76,7 +76,7 @@
         </div>
         <!--termina balance pesos-->
         <!--balance dolares-->
-        <div class="stats text-black col-span-2 row-span-3 bg-gray-100 rounded-box">
+        <div class="stats text-black col-span-4 md:col-span-2 row-span-3 bg-gray-100 rounded-box">
           <div class="stat">
             <div class="stat-title">Balance en dolares</div>
             <div class="stat-value">USD $2.400</div>
@@ -89,8 +89,8 @@
         <!--termina balance dolares-->
         <!--terminan balances-->
         <!--arranca movimientos-->
-        <div class="overflow-x-auto w-full col-span-4 ">
-          <table class="table w-full">
+        <div class="overflow-x-auto w-full col-span-4 text-black">
+          <table class="table-normal w-full">
             <!-- head -->
             <thead>
               <tr>
