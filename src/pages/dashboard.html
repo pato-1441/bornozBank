@@ -64,34 +64,126 @@
         <h1 class="text-black font-semibold text-3xl col-span-4">¡Bienvenido de vuelta (usuario)!</h1>
         <!--fin texto bienvenida-->
         <!--balance pesos-->
-        <div class="col-span-2 row-span-3 bg-gray-100 rounded-box flex flex-col justify-center items-center text-black">
-          <div class="text-3xl">ARS $14.500</div>
+        <div class="stats text-black col-span-2 row-span-3 bg-gray-100 rounded-box">
+          <div class="stat">
+            <div class="stat-title">Balance en pesos</div>
+            <div class="stat-value">ARS $89.400</div>
+            <div class="stat-actions">
+              <button class="btn btn-sm">Retirar</button>
+              <button class="btn btn-sm">Depositar</button>
+            </div>
+          </div>
         </div>
         <!--termina balance pesos-->
         <!--balance dolares-->
-        <div class="col-span-2 row-span-3 bg-gray-100 rounded-box flex justify-center items-center text-3xl text-black">
-          <div>USD $2.200</div>
+        <div class="stats text-black col-span-2 row-span-3 bg-gray-100 rounded-box">
+          <div class="stat">
+            <div class="stat-title">Balance en dolares</div>
+            <div class="stat-value">USD $2.400</div>
+            <div class="stat-actions">
+              <button class="btn btn-sm">Retirar</button>
+              <button class="btn btn-sm">Depositar</button>
+            </div>
+          </div>
         </div>
         <!--termina balance dolares-->
         <!--terminan balances-->
         <!--arranca movimientos-->
-        <div class="text-black">
-          <div class="text-2xl col-span-2 mb-4">Movimientos</div>
-          <div class="movimiento flex flex-row">
-            <!--avatar-->
-            <div class="avatar placeholder">
-              <div class="bg-neutral-focus text-neutral-content rounded-full w-12"><span class="text-lg">JOG</span></div>
-            </div>
-            <!--fin avatar-->
-            <!--datos movimiento-->
-            <div>Jesus Omar Garcia</div>
-            <!--movimiento-->
-            <div>-1.500</div>
-            <!--fin movimiento-->
-            <!--fin datos movimiento-->
-          </div>
+        <div class="overflow-x-auto w-full col-span-4 ">
+          <table class="table w-full">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- row 1 -->
+              <tr>
+                <td>
+                  <div class="flex items-center space-x-3">
+                    <div class="avatar placeholder mr-2">
+                      <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                        <span>MP</span>
+                      </div>
+                    </div> 
+                    <div>
+                      <div class="font-bold">Maximo Perez</div>
+                      <div class="text-sm opacity-50">Hoy</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-green-400">+$1.500</td>
+                <th>
+                  <button class="btn btn-ghost btn-xs">Detalles</button>
+                </th>
+              </tr>
+              <!-- row 2 -->
+              <tr>
+                <td>
+                  <div class="flex items-center space-x-3">
+                    <div class="avatar placeholder mr-2">
+                      <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                        <span>AM</span>
+                      </div>
+                    </div> 
+                    <div>
+                      <div class="font-bold">Anacleto Medina</div>
+                      <div class="text-sm opacity-50">Ayer</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-green-400">+$850</td>
+                <th>
+                  <button class="btn btn-ghost btn-xs">Detalles</button>
+                </th>
+              </tr>
+              <!-- row 3 -->
+              <tr>
+                <td>
+                  <div class="flex items-center space-x-3">
+                    <div class="avatar placeholder mr-2">
+                      <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                        <span>JL</span>
+                      </div>
+                    </div> 
+                    <div>
+                      <div class="font-bold">Jeronimo Lache</div>
+                      <div class="text-sm opacity-50">Antiayer</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-red-400">-$3.750</td>
+                <th>
+                  <button class="btn btn-ghost btn-xs">Detalles</button>
+                </th>
+              </tr>
+              <!-- row 4 -->
+              <tr>
+                <td>
+                  <div class="flex items-center space-x-3">
+                    <div class="avatar placeholder mr-2">
+                      <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                        <span>NP</span>
+                      </div>
+                    </div> 
+                    <div>
+                      <div class="font-bold">Nancy Pazos</div>
+                      <div class="text-sm opacity-50">05/08/22</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-red-400">-$6.300</td>
+                <th>
+                  <button class="btn btn-ghost btn-xs">Detalles</button>
+                </th>
+              </tr>
+            </tbody>
+            <!-- foot -->
+          </table>
         </div>
-        <!--termina movimientos-->
       </div>
     </section>
     <!--termina dashboard-->
