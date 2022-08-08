@@ -14,7 +14,7 @@
 
 <body class="bg-gradient-to-b from-green-400 to-cyan-900 ">
   <header>
-    <div class="navbar text-white">
+    <div class="navbar text-white pt-7 px-10">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -28,29 +28,29 @@
             <li><a>Transferencias</a></li>
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl">Bornoz Bank</a>
+        <a class="btn btn-ghost normal-case text-xl hidden sm:flex ">Bornoz Bank</a>
       </div>
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal p-0">
-          <li><a>Home</a></li>
-          <li><a>Contactos</a></li>
-          <li><a>Transferencias</a></li>
+      <div class="navbar-center hidden lg:flex justify-center align-middle">
+        <ul class="menu menu-horizontal p-0 font-light text-black bg-white rounded-lg shadow-lg">
+          <li><a class="active:bg-cyan-900">Home</a></li>
+          <li><a class="active:bg-cyan-900">Contactos</a></li>
+          <li><a class="active:bg-cyan-900">Transferencias</a></li>
         </ul>
       </div>
       <div class="navbar-end">
         <a
-          class="btn text-cyan-900 hover:text-white bg-white hover:border-cyan-900 border-cyan-900 hover:bg-cyan-900 border-none ml-2">Registrarse</a>
+          class="btn text-cyan-900 hover:text-white bg-white hover:border-cyan-900 border-cyan-900 hover:bg-cyan-900 border-none ml-2 shadow-lg">Registrarse</a>
       </div>
     </div>
   </header>
   <main class="container-fluid h-screen">
     <!--arranca login-->
-    <section class="bg-white mt-10 pb-12 w-96 mx-auto rounded-xl">
+    <section class="bg-white mt-10 pb-12 w-10/12 sm:w-8/12 md:w-6/12 lg:w-4/12 xl:w-4/12 2xl:w-3/12 mx-auto rounded-xl shadow-lg">
       <div id="welcome-card" class="text-black">
         <h2 class="text-green-400 text-center text-3xl pt-8">Bienvenido.</h2>
-        <div class="form">
+        <div class="form flex flex-col items-center">
           <!--arranca login usuario-->
-          <div class="form-control w-full max-w-xs mx-auto pt-4">
+          <div class="form-control w-full max-w-xs mx-auto pt-4 px-4">
             <label class="label">
               <span class="label-text">Nombre de usuario</span>
             </label>
@@ -58,7 +58,7 @@
           </div>
           <!--termina login usuario-->
           <!--arranca login password-->
-          <div class="form-control w-full max-w-xs mx-auto">
+          <div class="form-control w-full max-w-xs mx-auto px-4">
             <label class="label">
               <span class="label-text">Contraseña</span>
             </label>
@@ -74,7 +74,7 @@
           </div>
           <!--termina login password-->
           <button
-            class="w-80 mt-2 ml-8 btn btn-outline text-green-400 hover:text-white hover:border-green-400 border-green-400 hover:bg-green-400">Iniciar
+            class="w-1/3 mt-2 btn btn-outline text-green-400 hover:text-white hover:border-green-400 border-green-400 hover:bg-green-400">Iniciar
             Sesion</button>
         </div>
       </div>
