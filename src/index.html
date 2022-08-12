@@ -58,26 +58,27 @@
                 <!--arranca register usuario-->
                 <label class="label">
                   <span class="label-text">Nombre de usuario</span>
-                </label>                
+                </label>
                 <input required type="text" placeholder="Escriba aquí su nombre de usuario"
-                  class="input input-bordered w-full max-w-xs bg-white"/>
+                  class="input input-bordered w-full max-w-xs bg-white" minlength="4" maxlength="10" />
                 <!--termina register usuario-->
                 <!--arranca register email-->
                 <label class="label">
                   <span class="label-text">Correo electrónico</span>
                 </label>
                 <input required type="email" placeholder="Escriba aquí su correo electrónico"
-                  class="input input-bordered w-full max-w-xs bg-white"/>
+                  class="input input-bordered w-full max-w-xs bg-white" maxlength="50" />
                 <!--termina register email-->
                 <!--arranca register password-->
                 <label class="label">
                   <span class="label-text">Contraseña</span>
                 </label>
                 <input required type="password" placeholder="Escriba aquí su contraseña"
-                  class="input input-bordered w-full max-w-xs bg-white"/>
+                  class="input input-bordered w-full max-w-xs bg-white" minlength="4" maxlength="12" />
                 <!--termina register password-->
                 <!--boton send register-->
-                <button type="submit" id="submitRegister" class="btn mt-4 btn-outline text-green-400 hover:text-white hover:border-green-400 border-green-400 hover:bg-green-400 mb-3">Registrarse</button>
+                <button type="submit" id="submitRegister"
+                  class="btn mt-4 btn-outline text-green-400 hover:text-white hover:border-green-400 border-green-400 hover:bg-green-400 mb-3">Registrarse</button>
                 <!--termina boton send register-->
               </div>
             </div>
@@ -85,6 +86,17 @@
               <label for="my-modal-5"
                 class="btn btn-sm btn-circle absolute right-4 top-4 border-solid bg-transparent border-red-600 text-red-600 hover:bg-red-600 hover:text-white hover:border-none">X</label>
             </div>
+            <!--arranca alerta de registro con exito-->
+            <div class="alert alert-success bg-cyan-900 text-white hidden" id="alertRegisterSuccess">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="">El usuario ha sido creado correctamente! Puede iniciar sesión.</span>
+              </div>
+            </div>
+            <!--termina alerta de registro con exito-->
           </div>
           <!--termina modal box-->
         </div>

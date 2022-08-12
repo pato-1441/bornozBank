@@ -27,12 +27,14 @@ users.push(new User('Silvina','silvi@gmail.com','silvi'));
 
 const buttonRegister = document.querySelector("#submitRegister");
 buttonRegister.addEventListener("click",registerUser);
+const alertSuccess=document.querySelector("#alertRegisterSuccess");
 
 function registerUser(){
     let formularioRegistro = document.querySelector("#registerForm");
     let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value);
-    users.push(nuevoUser);
-    alert('Se ha agregado el usuario: '+(users[users.length-1].username)+' correctamente.');
+    users.push(nuevoUser);   
+    alertSuccess.classList.remove("hidden")
+    //alert('Se ha agregado el usuario: '+(users[users.length-1].username)+' correctamente.');
 }
 
 function removeUser(){
