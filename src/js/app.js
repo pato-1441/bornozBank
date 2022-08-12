@@ -25,13 +25,12 @@ users.push(new User('Patricio','admin@gmail.com','admin'));
 users.push(new User('Guillermo','guille@gmail.com','guille'));
 users.push(new User('Silvina','silvi@gmail.com','silvi'));
 
+const buttonRegister = document.querySelector("#submitRegister");
+buttonRegister.addEventListener("click",registerUser);
 
 function registerUser(){
-    let nuevoUser = new User(
-        prompt('Nombre:'),
-        prompt('Mail:'),
-        prompt('Contraseña:')
-        );
+    let formularioRegistro = document.querySelector("#registerForm");
+    let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value);
     users.push(nuevoUser);
     alert('Se ha agregado el usuario: '+(users[users.length-1].username)+' correctamente.');
 }

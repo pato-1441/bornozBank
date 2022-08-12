@@ -7,7 +7,7 @@
   <link href="../dist/output.css" rel="stylesheet">
   <title>Bornoz Bank</title>
   <script src="https://kit.fontawesome.com/2a09230c59.js" crossorigin="anonymous"></script>
-  <script defer src="./src/js/app.js"></script>
+  <script defer src="../src/js/app.js"></script>
   <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
 </head>
 
@@ -54,30 +54,30 @@
             <h2 class="text-gray-400 text-center text-2xl pt-4">Registrese aquí debajo gratis</h2>
             <div class="form flex flex-col items-center">
               <!--arranca register-->
-              <div class="form-control w-full max-w-xs mx-auto pt-4">
+              <div class="form-control w-full max-w-xs mx-auto pt-4" id="registerForm">
                 <!--arranca register usuario-->
                 <label class="label">
                   <span class="label-text">Nombre de usuario</span>
                 </label>                
                 <input required type="text" placeholder="Escriba aquí su nombre de usuario"
-                  class="input input-bordered w-full max-w-xs bg-white" />
+                  class="input input-bordered w-full max-w-xs bg-white"/>
                 <!--termina register usuario-->
                 <!--arranca register email-->
                 <label class="label">
                   <span class="label-text">Correo electrónico</span>
                 </label>
                 <input required type="email" placeholder="Escriba aquí su correo electrónico"
-                  class="input input-bordered w-full max-w-xs bg-white" />
+                  class="input input-bordered w-full max-w-xs bg-white"/>
                 <!--termina register email-->
                 <!--arranca register password-->
                 <label class="label">
                   <span class="label-text">Contraseña</span>
                 </label>
                 <input required type="password" placeholder="Escriba aquí su contraseña"
-                  class="input input-bordered w-full max-w-xs bg-white" />
+                  class="input input-bordered w-full max-w-xs bg-white"/>
                 <!--termina register password-->
                 <!--boton send register-->
-                <button type="submit" class="btn mt-4 btn-outline text-green-400 hover:text-white hover:border-green-400 border-green-400 hover:bg-green-400 mb-3">Registrarse</button>
+                <button type="submit" id="submitRegister" class="btn mt-4 btn-outline text-green-400 hover:text-white hover:border-green-400 border-green-400 hover:bg-green-400 mb-3">Registrarse</button>
                 <!--termina boton send register-->
               </div>
             </div>
