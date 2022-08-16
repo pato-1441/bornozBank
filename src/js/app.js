@@ -35,13 +35,16 @@ function registerUser(){
     const alertSuccess=document.getElementById("alertRegisterSuccess");
     const alertError=document.getElementById('alertRegisterError');
 
+    //Si los campos están completos
     if(formularioRegistro.children[1].value!==''&&formularioRegistro.children[3].value!==''&&formularioRegistro.children[5].value!==''){
         let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value);
+        //Creo el usuario y lo guardo en localStorage
         localStorage.setItem('usuario', JSON.stringify(nuevoUser));
+        //Limpio el formulario
         formularioRegistro.children[1].value = '';
         formularioRegistro.children[3].value = '';
         formularioRegistro.children[5].value = '';
-        // agrego timeout para que se borre la alerta de error
+        // agrego timeout para que se borre la alerta de exito y rediriga al dashboard
         alertError.classList.add('hidden'); 
         alertSuccess.classList.remove('hidden')
         setTimeout(function(){
@@ -86,7 +89,8 @@ function validarLogin(username,password){
         alert('Ocurrio un error inesperado');
     }
 }
-//
+
+
 // Contactos
 class Contact{
     constructor(contactFullname,contactCBU,contactAlias){
