@@ -7,7 +7,7 @@
   <link href="../dist/output.css" rel="stylesheet">
   <title>Bornoz Bank</title>
   <script src="https://kit.fontawesome.com/2a09230c59.js" crossorigin="anonymous"></script>
-  <script defer src="./js/app.js"></script>
+  <script defer src="./js/dashboard.js"></script>
 </head>
 
 <body class="bg-gradient-to-b from-green-400 to-cyan-900 ">
@@ -23,7 +23,7 @@
           </label>
           <ul tabindex="0"
             class="menu menu-compact dropdown-content mt-3 p-2 shadow-lg text-black bg-white rounded-box w-52">
-            <li><a class="hover:bg-cyan-900 active:bg-cyan-900">Home</a></li>
+            <li><a href="./dashboard.html" rel="noopener noreferrer" class="hover:bg-cyan-900 active:bg-cyan-900">Home</a></li>
             <li><a class="hover:bg-cyan-900 active:bg-cyan-900">Contactos</a></li>
             <li><a class="hover:bg-cyan-900 active:bg-cyan-900">Transferencias</a></li>
           </ul>
@@ -32,13 +32,13 @@
       </div>
       <div class="navbar-center hidden lg:flex justify-center align-middle">
         <ul class="menu menu-horizontal p-0 font-light text-black bg-white rounded-box shadow-lg">
-          <li><a class="active:bg-cyan-900">Home</a></li>
+          <li><a href="./dashboard.html" rel="noopener noreferrer" class="active:bg-cyan-900">Home</a></li>
           <li><a class="active:bg-cyan-900">Contactos</a></li>
           <li><a class="active:bg-cyan-900">Transferencias</a></li>
         </ul>
       </div>
       <div class="navbar-end">
-        <a
+        <a id="btnLogOut"
           class="btn font-medium rounded-box text-red-600 hover:text-white bg-white border-none hover:bg-red-600 ml-2 shadow-lg">
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -58,7 +58,7 @@
       <div class="grid grid-cols-4 grid-rows-12 gap-12">
         <!--balances-->
         <!--texto bienvenida-->
-        <h1 class="text-black font-semibold text-3xl col-span-4">¡Bienvenido de vuelta (usuario)!</h1>
+        <h1 class="text-black font-semibold text-3xl col-span-4">¡Bienvenido de vuelta <span id="loggedUser"></span>!</h1>
         <!--fin texto bienvenida-->
         <!--balance pesos-->
         <div class="stats text-black col-span-4 md:col-span-2 row-span-3 bg-gray-100 rounded-box">

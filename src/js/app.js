@@ -37,14 +37,23 @@ function registerUser(){
 
     if(formularioRegistro.children[1].value!==''&&formularioRegistro.children[3].value!==''&&formularioRegistro.children[5].value!==''){
         let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value);
-        users.push(nuevoUser);   
-        alertSuccess.classList.remove("hidden")
-        alertError.classList.add('hidden');
+        localStorage.setItem('usuario', JSON.stringify(nuevoUser));
         formularioRegistro.children[1].value = '';
         formularioRegistro.children[3].value = '';
         formularioRegistro.children[5].value = '';
+        // agrego timeout para que se borre la alerta de error
+        alertError.classList.add('hidden'); 
+        alertSuccess.classList.remove('hidden')
+        setTimeout(function(){
+            alertSuccess.classList.add('hidden');
+            window.location.href='./dashboard.html'
+        }, 5000);               
     } else {
+        // agrego timeout para que se borre la alerta de error
         alertError.classList.remove('hidden')
+        setTimeout(function(){
+            alertError.classList.add('hidden');
+        }, 5000);        
     }
 }
 
