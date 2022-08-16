@@ -3387,6 +3387,13 @@ body[dir="rtl"] .checkbox:checked,
   color: hsl(var(--suc, var(--nc)) / var(--tw-text-opacity));
 }
 
+.alert-error {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--er) / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: hsl(var(--erc, var(--nc)) / var(--tw-text-opacity));
+}
+
 .avatar.online:before {
   content: "";
   position: absolute;
@@ -3487,6 +3494,10 @@ body[dir="rtl"] .checkbox:checked,
 
 .absolute {
   position: absolute;
+}
+
+.relative {
+  position: relative;
 }
 
 .right-4 {
@@ -3749,6 +3760,16 @@ body[dir="rtl"] .checkbox:checked,
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 
+.bg-red-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
+}
+
+.bg-red-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -3808,6 +3829,11 @@ body[dir="rtl"] .checkbox:checked,
   padding-right: 1rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .pt-7 {
   padding-top: 1.75rem;
 }
@@ -3826,6 +3852,10 @@ body[dir="rtl"] .checkbox:checked,
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .text-center {
@@ -3859,6 +3889,11 @@ body[dir="rtl"] .checkbox:checked,
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-light {

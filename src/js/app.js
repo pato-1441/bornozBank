@@ -27,16 +27,25 @@ users.push(new User('Silvina','silvi@gmail.com','silvi'));
 
 // REGISTRO DE USUARIOS
 
-const buttonRegister = document.querySelector("#submitRegister");
+const buttonRegister = document.getElementById("submitRegister");
 buttonRegister.addEventListener("click",registerUser);
 
 function registerUser(){
-    let formularioRegistro = document.querySelector("#registerForm");
-    let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value);
-    users.push(nuevoUser);   
-    const alertSuccess=document.querySelector("#alertRegisterSuccess");
-    alertSuccess.classList.remove("hidden")
-    //alert('Se ha agregado el usuario: '+(users[users.length-1].username)+' correctamente.');
+    let formularioRegistro = document.getElementById("registerForm");
+    const alertSuccess=document.getElementById("alertRegisterSuccess");
+    const alertError=document.getElementById('alertRegisterError');
+
+    if(formularioRegistro.children[1].value!==''&&formularioRegistro.children[3].value!==''&&formularioRegistro.children[5].value!==''){
+        let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value);
+        users.push(nuevoUser);   
+        alertSuccess.classList.remove("hidden")
+        alertError.classList.add('hidden');
+        formularioRegistro.children[1].value = '';
+        formularioRegistro.children[3].value = '';
+        formularioRegistro.children[5].value = '';
+    } else {
+        alertError.classList.remove('hidden')
+    }
 }
 
 // FIN REGISTRO DE USUARIOS
