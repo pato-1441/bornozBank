@@ -27,9 +27,12 @@ const btnRetirarARSConfirmar = document.getElementById('btnRetirarARSConfirmar')
 btnRetirarARSConfirmar.addEventListener('click',retirarARS);
 
 function retirarARS(){
-    if(inputRetirarARSConfirmar.value<user.balanceARS){
-        user.balanceARS = (user.balanceARS)-(inputRetirarARSConfirmar.value)
-        balanceARSTxt.innerHTML=`${user.balanceARS}`
+    if(inputRetirarARSConfirmar.value>0&&inputRetirarARSConfirmar.value<=usuarioBalanceARS){
+        usuarioBalanceARS = (usuarioBalanceARS)-(inputRetirarARSConfirmar.value);
+        localStorage.setItem('usuarioBalanceARS', JSON.stringify(usuarioBalanceARS));
+        balanceARSTxt.innerHTML=`${usuarioBalanceARS}`;
+        inputRetirarARSConfirmar.value = '';
+        window.location.href='./dashboard.html';
     } else {
         alert('Error');
     }
@@ -43,7 +46,7 @@ function depositarARS(){
     if(inputDepositarARSConfirmar.value>1){
         debugger
         let balanceARSDepositado = (parseInt(inputDepositarARSConfirmar.value));
-        usuarioBalanceARS = parseInt(balanceARSDepositado+usuarioBalanceARS);
+        usuarioBalanceARS = parseInt(balanceARSDepositado+JSON.parse(usuarioBalanceARS));
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(usuarioBalanceARS));
         balanceARSTxt.innerHTML=`${usuarioBalanceARS}`
         inputDepositarARSConfirmar.value = '';
