@@ -11,6 +11,48 @@ btnLogOut.addEventListener('click',logOut);
 
 function logOut(){
     //Elimino el localStorage antes de irme
-    localStorage.removeItem('usuario');
+    //localStorage.removeItem('usuario');
+    localStorage.clear();
     window.location.href='./index.html';
 }
+
+// muestro balance ars en dashboard
+const balanceARSTxt = document.getElementById('balanceARSTxt');
+balanceARSTxt.innerHTML=`${JSON.parse(localStorage.getItem('usuarioBalanceARS'))}`
+
+// botones balance en pesos
+const inputRetirarARSConfirmar = document.getElementById('inputRetirarARSConfirmar');
+const btnRetirarARSConfirmar = document.getElementById('btnRetirarARSConfirmar');
+btnRetirarARSConfirmar.addEventListener('click',retirarARS);
+
+function retirarARS(){
+    if(inputRetirarARSConfirmar.value<user.balanceARS){
+        user.balanceARS = (user.balanceARS)-(inputRetirarARSConfirmar.value)
+        balanceARSTxt.innerHTML=`${user.balanceARS}`
+    } else {
+        alert('Error');
+    }
+}
+
+const inputDepositarARSConfimar = document.getElementById('inputDepositarARSConfirmar');
+const btnDepositarARS = document.getElementById('btnDepositarARS');
+btnDepositarARSConfirmar.addEventListener('click',depositarARS);
+
+function depositarARS(){
+    debugger
+    if(inputDepositarARSConfirmar.value>1){
+        user.balanceARS = parseInt(inputDepositarARSConfirmar.value);
+        balanceARSTxt.innerHTML=`${user.balanceARS}`
+        inputDepositarARSConfirmar.value = '';
+    } else {
+        alert('Error');
+    }
+}
+
+//fin botones pesos
+
+// muestro balance usd en dashboard
+const balanceUSDTxt = document.getElementById('balanceUSDTxt');
+balanceUSDTxt.innerHTML=`${JSON.parse(localStorage.getItem('usuarioBalanceUSD'))}`
+
+// botones balance en dolares

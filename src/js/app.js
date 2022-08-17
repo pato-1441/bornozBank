@@ -5,10 +5,12 @@
 //
 // Usuarios
 class User {
-    constructor(username,mail,password){
+    constructor(username,mail,password,balanceARS,balanceUSD){
         this.username = username;
         this.mail = mail;
-        this.password = password;          
+        this.password = password;
+        this.balanceARS = balanceARS;
+        this.balanceUSD = balanceUSD;
     }
     updateUsername(){
         this.username = prompt('Ingrese su nombre nuevo:');
@@ -21,9 +23,9 @@ class User {
     }
 }
 const users = []
-users.push(new User('Patricio','admin@gmail.com','admin'));
-users.push(new User('Guillermo','guille@gmail.com','guille'));
-users.push(new User('Silvina','silvi@gmail.com','silvi'));
+users.push(new User('Patricio','admin@gmail.com','admin','0','0'));
+users.push(new User('Guillermo','guille@gmail.com','guille','0','0'));
+users.push(new User('Silvina','silvi@gmail.com','silvi','0','0'));
 
 // REGISTRO DE USUARIOS
 
@@ -37,7 +39,7 @@ function registerUser(){
 
     //Si los campos están completos
     if(formularioRegistro.children[1].value!==''&&formularioRegistro.children[3].value!==''&&formularioRegistro.children[5].value!==''){
-        let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value);
+        let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value,localStorage.setItem('usuarioBalanceARS',JSON.stringify('0')),localStorage.setItem('usuarioBalanceUSD',JSON.stringify('0')));
         //Creo el usuario y lo guardo en localStorage
         localStorage.setItem('usuario', JSON.stringify(nuevoUser));
         //Limpio el formulario

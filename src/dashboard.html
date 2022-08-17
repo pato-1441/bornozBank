@@ -64,10 +64,34 @@
         <div class="stats text-black col-span-4 md:col-span-2 row-span-3 bg-gray-100 rounded-box">
           <div class="stat">
             <div class="stat-title">Balance en pesos</div>
-            <div class="stat-value">ARS $89.400</div>
+            <div class="stat-value">ARS $<span id="balanceARSTxt"></span></div>
             <div class="stat-actions">
-              <button class="btn btn-sm">Retirar</button>
-              <button class="btn btn-sm">Depositar</button>
+              <!-- abro modal retirar ARS-->
+              <label for="my-modal-4" class="btn btn-sm modal-button" id="btnRetirarARS">Retirar</label>
+              <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+              <label for="my-modal-4" class="modal cursor-pointer">
+                <label class="modal-box relative bg-white" for="">
+                  <h3 class="text-lg font-bold">Ingrese la cantidad a retirar:</h3>
+                  <div class="flex my-2">
+                    <input type="text" placeholder="Escriba aquí la cantidad por favor" class="input input-bordered w-full max-w-xs bg-gray-300 hover:bg-white focus:bg-white mr-2" id="inputRetirarARSConfirmar" minlength="1"/>
+                    <button class="btn btn-outline btn-success" id="btnRetirarARSConfirmar">Confirmar</button>
+                  </div>                  
+                </label>
+              </label>
+              <!-- cierro modal retirar ARS-->
+              <!-- abro modal depositar ARS-->
+              <label for="my-modal-5" class="btn btn-sm modal-button" id="btnDepositarARS">Depositar</label>
+              <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+              <label for="my-modal-5" class="modal cursor-pointer">
+                <label class="modal-box relative bg-white" for="">
+                  <h3 class="text-lg font-bold">Ingrese la cantidad a depositar:</h3>
+                  <div class="flex my-2">
+                    <input type="text" placeholder="Escriba aquí la cantidad por favor" class="input input-bordered w-full max-w-xs bg-gray-300 hover:bg-white focus:bg-white mr-2" id="inputDepositarARSConfirmar" minlength="1"/>
+                    <button class="btn btn-outline btn-success" id="btnDepositarARSConfirmar">Confirmar</button>
+                  </div>                  
+                </label>
+              </label>
+              <!-- cierro modal depositar ARS-->
             </div>
           </div>
         </div>
@@ -76,7 +100,7 @@
         <div class="stats text-black col-span-4 md:col-span-2 row-span-3 bg-gray-100 rounded-box">
           <div class="stat">
             <div class="stat-title">Balance en dolares</div>
-            <div class="stat-value">USD $2.400</div>
+            <div class="stat-value">USD $<span id="balanceUSDTxt"></span></div>
             <div class="stat-actions">
               <button class="btn btn-sm">Retirar</button>
               <button class="btn btn-sm">Depositar</button>
