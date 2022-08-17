@@ -18,7 +18,8 @@ function logOut(){
 
 // muestro balance ars en dashboard
 const balanceARSTxt = document.getElementById('balanceARSTxt');
-balanceARSTxt.innerHTML=`${JSON.parse(localStorage.getItem('usuarioBalanceARS'))}`
+let usuarioBalanceARS = JSON.parse(localStorage.getItem('usuarioBalanceARS'))
+balanceARSTxt.innerHTML=`${usuarioBalanceARS}`
 
 // botones balance en pesos
 const inputRetirarARSConfirmar = document.getElementById('inputRetirarARSConfirmar');
@@ -39,11 +40,14 @@ const btnDepositarARS = document.getElementById('btnDepositarARS');
 btnDepositarARSConfirmar.addEventListener('click',depositarARS);
 
 function depositarARS(){
-    debugger
     if(inputDepositarARSConfirmar.value>1){
-        user.balanceARS = parseInt(inputDepositarARSConfirmar.value);
-        balanceARSTxt.innerHTML=`${user.balanceARS}`
+        debugger
+        let balanceARSDepositado = (parseInt(inputDepositarARSConfirmar.value));
+        usuarioBalanceARS = parseInt(balanceARSDepositado+usuarioBalanceARS);
+        localStorage.setItem('usuarioBalanceARS', JSON.stringify(usuarioBalanceARS));
+        balanceARSTxt.innerHTML=`${usuarioBalanceARS}`
         inputDepositarARSConfirmar.value = '';
+        window.location.href='./dashboard.html';
     } else {
         alert('Error');
     }
