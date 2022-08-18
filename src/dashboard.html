@@ -54,9 +54,9 @@
       <!--termina navbar end-->
     </div>
   </header>
-  <main class="container-fluid h-screen flex justify-center">
+  <main class="">
     <!--arranca dashboard-->
-    <section id="dashboard" class="mt-10 mb-10 p-10 w-11/12 h-fit bg-white rounded-box">
+    <section id="dashboard" class="container-fluid mx-auto mt-10 mb-10 p-10 w-11/12 h-fit bg-white rounded-box">
       <div class="grid grid-cols-4 grid-rows-12 gap-12">
         <!--balances-->
         <!--texto bienvenida-->
@@ -77,7 +77,20 @@
                   <div class="flex my-2">
                     <input type="text" placeholder="Escriba aquí la cantidad por favor" class="input input-bordered w-full max-w-xs bg-gray-300 hover:bg-white focus:bg-white mr-2" id="inputRetirarARSConfirmar" minlength="1"/>
                     <button class="btn btn-outline btn-success" id="btnRetirarARSConfirmar">Confirmar</button>
-                  </div>                  
+                  </div>
+                  <!--arranca cargando progress bar exito-->
+                  <div class="flex justify-center">
+                    <button class="btn btn-square loading mt-2 w-full hidden" id="loadingRetirar"></button>
+                  </div>
+                  <!--termina cargando progress bar exito-->
+                  <!--arranca error en retirar-->
+                  <div class="alert alert-error text-white bg-red-700 hidden" id="alertRetirarError">
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      <span>Error! Monto no disponible.</span>
+                    </div>
+                  </div>
+                  <!--termina error en retirar-->                  
                 </label>
               </label>
               <!-- cierro modal retirar ARS-->
@@ -90,7 +103,15 @@
                   <div class="flex my-2">
                     <input type="text" placeholder="Escriba aquí la cantidad por favor" class="input input-bordered w-full max-w-xs bg-gray-300 hover:bg-white focus:bg-white mr-2" id="inputDepositarARSConfirmar" minlength="1"/>
                     <button class="btn btn-outline btn-success" id="btnDepositarARSConfirmar">Confirmar</button>
-                  </div>                  
+                  </div>    
+                  <!--arranca error en depositar-->
+                  <div class="alert alert-error text-white bg-red-700 hidden" id="alertDepositarError">
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      <span>Error! Ingrese una cantidad mayor a ARS $0.</span>
+                    </div>
+                  </div>
+                  <!--termina error en depositar-->         
                 </label>
               </label>
               <!-- cierro modal depositar ARS-->
@@ -112,7 +133,7 @@
         <!--termina balance dolares-->
         <!--terminan balances-->
         <!--arranca movimientos-->
-        <div class="overflow-x-auto w-full col-span-4 text-black ">
+        <div class="overflow-x-auto w-full col-span-4 text-black">
           <h2 class="text-2xl mb-4">Movimientos</h2>            
           <table class="table-compact sm:table-normal w-full">
             <!-- head -->

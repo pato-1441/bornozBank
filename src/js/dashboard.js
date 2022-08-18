@@ -32,9 +32,17 @@ function retirarARS(){
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(usuarioBalanceARS));
         balanceARSTxt.innerHTML=`${usuarioBalanceARS}`;
         inputRetirarARSConfirmar.value = '';
-        window.location.href='./dashboard.html';
+        const loadingRetirar = document.getElementById('loadingRetirar');
+        loadingRetirar.classList.remove('hidden');
+        setTimeout(function(){
+            window.location.href='./dashboard.html';;
+        }, 2500); 
     } else {
-        alert('Error');
+        const alertRetirarError=document.getElementById('alertRetirarError');
+        alertRetirarError.classList.remove('hidden');
+        setTimeout(function(){
+            alertRetirarError.classList.add('hidden');
+        }, 5000); 
     }
 }
 
@@ -52,7 +60,11 @@ function depositarARS(){
         inputDepositarARSConfirmar.value = '';
         window.location.href='./dashboard.html';
     } else {
-        alert('Error');
+        const alertDepositarError=document.getElementById('alertDepositarError');
+        alertDepositarError.classList.remove('hidden');
+        setTimeout(function(){
+            alertDepositarError.classList.add('hidden');
+        }, 7000); 
     }
 }
 
