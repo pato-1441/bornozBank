@@ -52,7 +52,6 @@ btnDepositarARSConfirmar.addEventListener('click',depositarARS);
 
 function depositarARS(){
     if(inputDepositarARSConfirmar.value>1){
-        debugger
         let balanceARSDepositado = (parseInt(inputDepositarARSConfirmar.value));
         usuarioBalanceARS = parseInt(balanceARSDepositado+JSON.parse(usuarioBalanceARS));
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(usuarioBalanceARS));
@@ -72,6 +71,58 @@ function depositarARS(){
 
 // muestro balance usd en dashboard
 const balanceUSDTxt = document.getElementById('balanceUSDTxt');
-balanceUSDTxt.innerHTML=`${JSON.parse(localStorage.getItem('usuarioBalanceUSD'))}`
+let usuarioBalanceUSD = JSON.parse(localStorage.getItem('usuarioBalanceUSD'));
+balanceUSDTxt.innerHTML=`${usuarioBalanceUSD}`;
 
 // botones balance en dolares
+const inputRetirarUSDConfirmar = document.getElementById('inputRetirarUSDConfirmar');
+const btnRetirarUSDConfirmar = document.getElementById('btnRetirarUSDConfirmar');
+btnRetirarUSDConfirmar.addEventListener('click',retirarUSD);
+
+function retirarUSD(){
+    if(inputRetirarUSDConfirmar.value>0&&inputRetirarUSDConfirmar.value<=usuarioBalanceUSD){
+        usuarioBalanceUSD = (usuarioBalanceUSD)-(inputRetirarUSDConfirmar.value);
+        localStorage.setItem('usuarioBalanceUSD', JSON.stringify(usuarioBalanceUSD));
+        balanceUSDTxt.innerHTML=`${usuarioBalanceUSD}`;
+        inputRetirarUSDConfirmar.value = '';
+        const loadingRetirarUSD = document.getElementById('loadingRetirarUSD');
+        loadingRetirarUSD.classList.remove('hidden');
+        setTimeout(function(){
+            window.location.href='./dashboard.html';;
+        }, 2500); 
+    } else {
+        const alertRetirarErrorUSD=document.getElementById('alertRetirarErrorUSD');
+        alertRetirarErrorUSD.classList.remove('hidden');
+        setTimeout(function(){
+            alertRetirarErrorUSD.classList.add('hidden');
+        }, 5000); 
+    }
+}
+
+
+/*
+const inputDepositarARSConfimar = document.getElementById('inputDepositarARSConfirmar');
+const btnDepositarARS = document.getElementById('btnDepositarARS');
+btnDepositarARSConfirmar.addEventListener('click',depositarARS);
+*/
+
+const inputDepositarUSDConfirmar = document.getElementById('inputDepositarUSDConfirmar');
+const btnDepositarUSDConfirmar = document.getElementById('btnDepositarUSDConfirmar');
+btnDepositarUSDConfirmar.addEventListener('click',depositarUSD);
+
+function depositarUSD(){
+    if(inputDepositarUSDConfirmar.value>1){
+        let balanceUSDDepositado = (parseInt(inputDepositarUSDConfirmar.value));
+        usuarioBalanceUSD = parseInt(balanceUSDDepositado+JSON.parse(usuarioBalanceUSD));
+        localStorage.setItem('usuarioBalanceUSD', JSON.stringify(usuarioBalanceUSD));
+        balanceUSDTxt.innerHTML=`${usuarioBalanceUSD}`
+        inputDepositarUSDConfirmar.value = '';
+        window.location.href='./dashboard.html';
+    } else {
+        const alertDepositarErrorUSD=document.getElementById('alertDepositarErrorUSD');
+        alertDepositarErrorUSD.classList.remove('hidden');
+        setTimeout(function(){
+            alertDepositarErrorUSD.classList.add('hidden');
+        }, 7000); 
+    }
+}

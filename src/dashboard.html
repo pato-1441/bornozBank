@@ -125,8 +125,58 @@
             <div class="stat-title">Balance en dolares</div>
             <div class="stat-value">USD $<span id="balanceUSDTxt"></span></div>
             <div class="stat-actions">
-              <button class="btn btn-sm">Retirar</button>
-              <button class="btn btn-sm">Depositar</button>
+              <!-- abro modal retirar USD-->
+              <label for="my-modal-6" class="btn btn-sm modal-button" id="btnRetirarUSD">Retirar</label>
+              <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+              <label for="my-modal-6" class="modal cursor-pointer">
+                <label class="modal-box relative bg-white" for="">
+                  <h3 class="text-lg font-bold">Ingrese la cantidad a retirar:</h3>
+                  <div class="flex my-2">
+                    <input type="text" placeholder="Escriba aquí la cantidad por favor" class="input input-bordered w-full max-w-xs bg-gray-300 hover:bg-white focus:bg-white mr-2" id="inputRetirarUSDConfirmar" minlength="1"/>
+                    <button class="btn btn-outline btn-success" id="btnRetirarUSDConfirmar">Confirmar</button>
+                  </div>
+                  <!--arranca cargando progress bar exito-->
+                  <div class="flex justify-center">
+                    <button class="btn btn-square loading mt-2 w-full hidden" id="loadingRetirarUSD"></button>
+                  </div>
+                  <!--termina cargando progress bar exito-->
+                  <!--arranca error en retirar USD-->
+                  <div class="alert alert-error text-white bg-red-700 hidden" id="alertRetirarErrorUSD">
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      <span>Error! Monto no disponible.</span>
+                    </div>
+                  </div>
+                  <!--termina error en retirar USD-->                  
+                </label>
+              </label>
+              <!-- cierro modal retirar USD-->
+              <!-- abro modal depositar USD-->
+              <label for="my-modal-7" class="btn btn-sm modal-button" id="btnDepositarUSD">Depositar</label>
+              <input type="checkbox" id="my-modal-7" class="modal-toggle" />
+              <label for="my-modal-7" class="modal cursor-pointer">
+                <label class="modal-box relative bg-white" for="">
+                  <h3 class="text-lg font-bold">Ingrese la cantidad a depositar:</h3>
+                  <div class="flex my-2">
+                    <input type="text" placeholder="Escriba aquí la cantidad por favor" class="input input-bordered w-full max-w-xs bg-gray-300 hover:bg-white focus:bg-white mr-2" id="inputDepositarUSDConfirmar" minlength="1"/>
+                    <button class="btn btn-outline btn-success" id="btnDepositarUSDConfirmar">Confirmar</button>
+                  </div>
+                  <!--arranca cargando progress bar exito-->
+                  <div class="flex justify-center">
+                    <button class="btn btn-square loading mt-2 w-full hidden" id="loadingDepositarUSD"></button>
+                  </div>
+                  <!--termina cargando progress bar exito-->
+                  <!--arranca error en retirar USD-->
+                  <div class="alert alert-error text-white bg-red-700 hidden" id="alertDepositarErrorUSD">
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      <span>Error! Ingrese una cantidad mayor a USD $0.</span>
+                    </div>
+                  </div>
+                  <!--termina error en retirar USD-->                  
+                </label>
+              </label>
+              <!-- cierro modal depositar USD-->
             </div>
           </div>
         </div>
