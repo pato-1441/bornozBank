@@ -36,7 +36,7 @@ function retirarARS(){
         loadingRetirar.classList.remove('hidden');
         setTimeout(function(){
             window.location.href='./dashboard.html';;
-        }, 2500); 
+        }, 500); 
     } else {
         const alertRetirarError=document.getElementById('alertRetirarError');
         alertRetirarError.classList.remove('hidden');
@@ -98,13 +98,6 @@ function retirarUSD(){
         }, 5000); 
     }
 }
-
-
-/*
-const inputDepositarARSConfimar = document.getElementById('inputDepositarARSConfirmar');
-const btnDepositarARS = document.getElementById('btnDepositarARS');
-btnDepositarARSConfirmar.addEventListener('click',depositarARS);
-*/
 
 const inputDepositarUSDConfirmar = document.getElementById('inputDepositarUSDConfirmar');
 const btnDepositarUSDConfirmar = document.getElementById('btnDepositarUSDConfirmar');
