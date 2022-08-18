@@ -1,169 +1,250 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../dist/output.css" rel="stylesheet">
-  <title>Bornoz Bank | Contactos</title>
-  <script src="https://kit.fontawesome.com/2a09230c59.js" crossorigin="anonymous"></script>
-  <script defer src="./js/contactos.js"></script>
-  <link rel="shortcut icon" href="../src/assets/logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <title>Bornoz Bank | Contactos</title>
+    <script src="https://kit.fontawesome.com/2a09230c59.js" crossorigin="anonymous"></script>
+    <script defer src="./js/contactos.js"></script>
+    <link rel="shortcut icon" href="../src/assets/logo.png" type="image/x-icon">
 </head>
+
 <body class="bg-gradient-to-b from-green-400 to-cyan-900 ">
     <header>
-      <div class="navbar text-white pt-7 px-10">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <label tabindex="0" class="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </label>
-            <ul tabindex="0"
-              class="menu menu-compact dropdown-content mt-3 p-2 shadow-lg text-black bg-white rounded-box w-52">
-              <li><a href="./dashboard.html" rel="noopener noreferrer" class="hover:bg-cyan-900 active:bg-cyan-900">Home</a></li>
-              <li><a href="./contactos.html" rel="noopener noreferrer" class="hover:bg-cyan-900 active:bg-cyan-900">Contactos</a></li>
-              <li><a class="hover:bg-cyan-900 active:bg-cyan-900">Transferencias</a></li>
-            </ul>
-          </div>
-          <a rel="noopener noreferrer" class="btn btn-ghost normal-case text-xl hidden sm:flex "><img class="flex w-10"
-            src="./assets/logo-blanco.png" alt="logo de Bornoz Bank"></a>
-        </div>
-        <div class="navbar-center hidden lg:flex justify-center align-middle">
-          <ul class="menu menu-horizontal p-0 font-light text-black bg-white rounded-box shadow-lg">
-            <li><a href="./dashboard.html" rel="noopener noreferrer" class="active:bg-cyan-900">Home</a></li>
-            <li><a href="./contactos.html" rel="noopener noreferrer" class="active:bg-cyan-900">Contactos</a></li>
-            <li><a class="active:bg-cyan-900">Transferencias</a></li>
-          </ul>
-        </div>
-        <div class="navbar-end">
-          <a id="btnLogOut"
-            class="btn font-medium rounded-box text-red-600 hover:text-white bg-white border-none hover:bg-red-600 ml-2 shadow-lg">
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
-                  clip-rule="evenodd" />
-              </svg>
+        <div class="navbar text-white pt-7 px-10">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="menu menu-compact dropdown-content mt-3 p-2 shadow-lg text-black bg-white rounded-box w-52">
+                        <li><a href="./dashboard.html" rel="noopener noreferrer"
+                                class="hover:bg-cyan-900 active:bg-cyan-900">Home</a></li>
+                        <li><a href="./contactos.html" rel="noopener noreferrer"
+                                class="hover:bg-cyan-900 active:bg-cyan-900">Contactos</a></li>
+                        <li><a class="hover:bg-cyan-900 active:bg-cyan-900">Transferencias</a></li>
+                    </ul>
+                </div>
+                <a rel="noopener noreferrer" class="btn btn-ghost normal-case text-xl hidden sm:flex "><img
+                        class="flex w-10" src="./assets/logo-blanco.png" alt="logo de Bornoz Bank"></a>
             </div>
-          </a>
+            <div class="navbar-center hidden lg:flex justify-center align-middle">
+                <ul class="menu menu-horizontal p-0 font-light text-black bg-white rounded-box shadow-lg">
+                    <li><a href="./dashboard.html" rel="noopener noreferrer" class="active:bg-cyan-900">Home</a></li>
+                    <li><a href="./contactos.html" rel="noopener noreferrer" class="active:bg-cyan-900">Contactos</a>
+                    </li>
+                    <li><a class="active:bg-cyan-900">Transferencias</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a id="btnLogOut"
+                    class="btn font-medium rounded-box text-red-600 hover:text-white bg-white border-none hover:bg-red-600 ml-2 shadow-lg">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <!--termina navbar end-->
         </div>
-        <!--termina navbar end-->
-      </div>
     </header>
     <main>
-      <!--arranca contactos-->
-      <section class="container-fluid mx-auto mt-10 mb-10 p-10 w-11/12 h-fit bg-white rounded-box text-black">
-        <div class="flex justify-between">
-            <h2 class="text-2xl mb-4">Contactos</h2>
-            <label for="my-modal-4" class="btn btn-outline btn-success modal-button font-medium rounded-box shadow-lg"><span class="ml-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
-            </svg></span>
-            </label>
-        </div>
-        <input type="checkbox" id="my-modal-4" class="modal-toggle" />
-        <!--cuerpo del modal-->
-        <label for="my-modal-4" class="modal cursor-pointer">
-          <label class="modal-box relative w-11/12 sm:w-8/12 h-fit max-w-5xl bg-white text-black flex flex-col" for="">
-            <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">Complete todos los campos para añadir un contacto nuevo</h2>
-            <div class="form flex flex-col items-center">
-              <!--arranca añadir contacto-->
-              <div class="form-control w-full max-w-xs mx-auto pt-4 pb-4" id="addContactForm">
-                <!--arranca nombre contacto-->
-                <label class="label">
-                  <span class="label-text text-base">Nombre Completo</span>
+        <!--arranca contactos-->
+        <section class="container-fluid mx-auto mt-10 mb-10 p-10 w-11/12 h-fit bg-white rounded-box text-black">
+            <div class="flex justify-between mb-4">
+                <h2 class="text-2xl mb-4 ">Contactos</h2>
+                <label for="my-modal-4"
+                    class="btn btn-outline btn-success modal-button font-medium rounded-box shadow-lg"><span
+                        class="ml-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path
+                                d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
+                        </svg></span>
                 </label>
-                <input required type="text" placeholder="Nombre completo" class="input input-bordered w-full max-w-xs bg-white" minlength="4" maxlength="30" />
-                <!--termina nombre contacto-->
-                <!--arranca cbu contacto-->
-                <label class="label">
-                  <span class="label-text text-base">CBU</span>
-                </label>
-                <input required type="email" placeholder="CBU" class="input input-bordered w-full max-w-xs bg-white" minlength="22" maxlength="22" />
-                <!--termina cbu contacto-->
-                <!--arranca alias contacto-->
-                <label class="label">
-                  <span class="label-text text-base">Alias</span>
-                </label>
-                <input required type="password" placeholder="Alias" class="input input-bordered w-full max-w-xs bg-white" minlength="2" maxlength="40" />
-                <!--termina alias contacto-->
-                <!--boton añadir contacto-->
-                <button type="submit" id="submitAddContact"
-                  class="btn mt-4 btn-outline text-black border-black hover:text-white hover:border-green-400 hover:bg-green-400 mb-3">Añadir contacto</button>
-                <!--termina añadir contacto-->
-                <!--arranca alerta contacto añadido con exito-->
-                <div class="alert alert-success bg-green-400 text-white hidden" id="alertAddContactSuccess">
-                  <div><svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span>Se ha añadido correctamente el contacto.</span>
-                  </div>
-                </div>
-                <!--termina alerta contacto añadido con exito-->
-                <!--arranca error en añadir contacto-->
-                <div class="alert alert-error text-white bg-red-700 hidden" id="alertRegisterError">
-                  <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span>Error! Complete todos los campos por favor.</span>
-                  </div>
-                </div>
-                <!--termina error en añadir contacto-->
-              </div>
-              <!--termina form interno-->
             </div>
-            <!--termina form contacto-->
-          </label>
-        </label>
-        <!--termina modal añadir contactos-->
-        <!--tabla de contactos-->
-        <div class="w-full mt-4">
-            <table class="table-compact sm:table-normal w-full">
-              <!-- head -->
-              <thead class="bg-gray-200">
-                <tr>
-                  <th>
-                  </th>
-                  <th><span class="font-medium">Nombre</span></th>
-                  <th><span class="font-medium">CBU</span></th>
-                  <th><span class="font-medium">Alias</span></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- row 1 -->
-                <tr class="bg-gray-50">
-                  <th>
-                  </th>
-                  <td><span id="nombreContacto1">Joaquin Carbajal</span></td>
-                  <td>0008965142452469952001</td>
-                  <td>joaquito.capichio</td>
-                  <th>
-                    <button class="btn-sm rounded-box text-red-600 sm:text-red-600 hover:text-white border-none sm:hover:text-white bg-white sm:bg-white hover:bg-red-600 sm:hover:bg-red-600 shadow-lg sm:shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clip-rule="evenodd" /></svg>
-                    </button>
-                  </th>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        <!--termina tabla de contactos-->
-        <!--termina contactos-->
-      </section>      
+            <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+            <!--cuerpo del modal-->
+            <label for="my-modal-4" class="modal cursor-pointer">
+                <label class="modal-box relative w-11/12 sm:w-8/12 h-fit max-w-5xl bg-white text-black flex flex-col"
+                    for="">
+                    <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">Complete todos los
+                        campos para añadir un contacto nuevo</h2>
+                    <div class="form flex flex-col items-center">
+                        <!--arranca añadir contacto-->
+                        <div class="form-control w-full max-w-xs mx-auto pt-4 pb-4" id="addContactForm">
+                            <!--arranca nombre contacto-->
+                            <label class="label">
+                                <span class="label-text text-base">Nombre Completo</span>
+                            </label>
+                            <input required type="text" placeholder="Nombre completo"
+                                class="input input-bordered w-full max-w-xs bg-white" minlength="4" maxlength="30" />
+                            <!--termina nombre contacto-->
+                            <!--arranca cbu contacto-->
+                            <label class="label">
+                                <span class="label-text text-base">CBU</span>
+                            </label>
+                            <input required type="email" placeholder="CBU"
+                                class="input input-bordered w-full max-w-xs bg-white" minlength="22" maxlength="22" />
+                            <!--termina cbu contacto-->
+                            <!--arranca alias contacto-->
+                            <label class="label">
+                                <span class="label-text text-base">Alias</span>
+                            </label>
+                            <input required type="password" placeholder="Alias"
+                                class="input input-bordered w-full max-w-xs bg-white" minlength="2" maxlength="40" />
+                            <!--termina alias contacto-->
+                            <!--boton añadir contacto-->
+                            <button type="submit" id="submitAddContact"
+                                class="btn mt-4 btn-outline text-black border-black hover:text-white hover:border-green-400 hover:bg-green-400 mb-3">Añadir
+                                contacto</button>
+                            <!--termina añadir contacto-->
+                            <!--arranca alerta contacto añadido con exito-->
+                            <div class="alert alert-success bg-green-400 text-white hidden" id="alertAddContactSuccess">
+                                <div><svg xmlns="http://www.w3.org/2000/svg"
+                                        class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                    <span>Se ha añadido correctamente el contacto.</span>
+                                </div>
+                            </div>
+                            <!--termina alerta contacto añadido con exito-->
+                            <!--arranca error en añadir contacto-->
+                            <div class="alert alert-error text-white bg-red-700 hidden" id="alertRegisterError">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6"
+                                        fill="none" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>Error! Complete todos los campos por favor.</span>
+                                </div>
+                            </div>
+                            <!--termina error en añadir contacto-->
+                        </div>
+                        <!--termina form interno-->
+                    </div>
+                    <!--termina form contacto-->
+                </label>
+            </label>
+            <!--termina modal añadir contactos-->
+            <div class="grid grid-cols-4 gap-4">
+                <div class="bg-gray-200 p-2 rounded-box text-center">
+                    <label for="my-modal-4" class="btn modal-button font-medium">
+                        <span class="ml-1">Joaquin Carbajal</span>
+                    </label>
+                    <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+                    <!--cuerpo del modal-->
+                    <label for="my-modal-4" class="modal cursor-pointer">
+                        <label
+                            class="modal-box relative w-11/12 sm:w-8/12 h-fit max-w-5xl bg-white text-black flex flex-col"
+                            for="">
+                            <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">Complete todos
+                                los
+                                campos para añadir un contacto nuevo</h2>
+                            <div class="form flex flex-col items-center">
+                                <!--arranca añadir contacto-->
+                                <div class="form-control w-full max-w-xs mx-auto pt-4 pb-4" id="addContactForm">
+                                    <!--arranca nombre contacto-->
+                                    <label class="label">
+                                        <span class="label-text text-base">Nombre Completo</span>
+                                    </label>
+                                    <input required type="text" placeholder="Nombre completo"
+                                        class="input input-bordered w-full max-w-xs bg-white" minlength="4"
+                                        maxlength="30" />
+                                    <!--termina nombre contacto-->
+                                    <!--arranca cbu contacto-->
+                                    <label class="label">
+                                        <span class="label-text text-base">CBU</span>
+                                    </label>
+                                    <input required type="email" placeholder="CBU"
+                                        class="input input-bordered w-full max-w-xs bg-white" minlength="22"
+                                        maxlength="22" />
+                                    <!--termina cbu contacto-->
+                                    <!--arranca alias contacto-->
+                                    <label class="label">
+                                        <span class="label-text text-base">Alias</span>
+                                    </label>
+                                    <input required type="password" placeholder="Alias"
+                                        class="input input-bordered w-full max-w-xs bg-white" minlength="2"
+                                        maxlength="40" />
+                                    <!--termina alias contacto-->
+                                    <!--boton añadir contacto-->
+                                    <button type="submit" id="submitAddContact"
+                                        class="btn mt-4 btn-outline text-black border-black hover:text-white hover:border-green-400 hover:bg-green-400 mb-3">Añadir
+                                        contacto</button>
+                                    <!--termina añadir contacto-->
+                                    <!--arranca alerta contacto añadido con exito-->
+                                    <div class="alert alert-success bg-green-400 text-white hidden"
+                                        id="alertAddContactSuccess">
+                                        <div><svg xmlns="http://www.w3.org/2000/svg"
+                                                class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                            <span>Se ha añadido correctamente el contacto.</span>
+                                        </div>
+                                    </div>
+                                    <!--termina alerta contacto añadido con exito-->
+                                    <!--arranca error en añadir contacto-->
+                                    <div class="alert alert-error text-white bg-red-700 hidden" id="alertRegisterError">
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span>Error! Complete todos los campos por favor.</span>
+                                        </div>
+                                    </div>
+                                    <!--termina error en añadir contacto-->
+                                </div>
+                                <!--termina form interno-->
+                            </div>
+                            <!--termina form contacto-->
+                        </label>
+                    </label>
+                    <!--termina modal añadir contactos-->
+                </div>
+                <div class="bg-gray-200 p-2 rounded-box text-center">
+                    <span id="nombreContacto" class="">Joaquin Carbajal</span>
+                </div>
+                <div class="bg-gray-200 p-2 rounded-box text-center">
+                    <span id="nombreContacto" class="">Joaquin Carbajal</span>
+                </div>
+                <div class="bg-gray-200 p-2 rounded-box text-center">
+                    <span id="nombreContacto" class="">Joaquin Carbajal</span>
+                </div>
+            </div>
+            <!--termina contactos-->
+        </section>
     </main>
     <footer class="footer footer-center p-5 bg-base-100 text-white">
-      <div>
-        <p><span class="text-sm"> Desarrollado por:</span><br><span class="font-bold text-base">Patricio Albornoz</span>
-        </p>
-        <p>Copyright © 2022 - Todos los derechos Reservados</p>
-      </div>
-      <div>
-        <div class="grid grid-flow-col gap-4">
-          <a href="https://github.com/pato-1441" target="_blank" rel="noopener noreferrer"><i
-              class="fa-brands fa-github fa-2xl"></i></a>
-          <a href="https://www.linkedin.com/in/patoalbornoz/" target="_blank" rel="noopener noreferrer"><i
-              class="fa-brands fa-linkedin fa-2xl"></i></a>
+        <div>
+            <p><span class="text-sm"> Desarrollado por:</span><br><span class="font-bold text-base">Patricio
+                    Albornoz</span>
+            </p>
+            <p>Copyright © 2022 - Todos los derechos Reservados</p>
         </div>
-      </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="https://github.com/pato-1441" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-github fa-2xl"></i></a>
+                <a href="https://www.linkedin.com/in/patoalbornoz/" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a>
+            </div>
+        </div>
     </footer>
-  
-  </body>
+
+</body>
+
 </html>
