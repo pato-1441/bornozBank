@@ -55,12 +55,15 @@
     <main>
       <!--arranca contactos-->
       <section class="container-fluid mx-auto mt-10 mb-10 p-10 w-11/12 h-fit bg-white rounded-box text-black">
-        <h2 class="text-2xl mb-4">Contactos</h2>
-        <label for="my-modal-4" class="btn btn-outline btn-success modal-button font-medium rounded-box shadow-lg"><span class="ml-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
-          </svg></span>
-        </label>
+        <div class="flex justify-between">
+            <h2 class="text-2xl mb-4">Contactos</h2>
+            <label for="my-modal-4" class="btn btn-outline btn-success modal-button font-medium rounded-box shadow-lg"><span class="ml-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
+            </svg></span>
+            </label>
+        </div>
         <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+        <!--cuerpo del modal-->
         <label for="my-modal-4" class="modal cursor-pointer">
           <label class="modal-box relative w-11/12 sm:w-8/12 h-fit max-w-5xl bg-white text-black flex flex-col" for="">
             <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">Complete todos los campos para añadir un contacto nuevo</h2>
@@ -112,7 +115,7 @@
         </label>
         <!--termina modal añadir contactos-->
         <!--tabla de contactos-->
-        <div class="w-full mt-4 rounded-box">
+        <div class="w-full mt-4">
             <table class="table-compact sm:table-normal w-full">
               <!-- head -->
               <thead class="bg-gray-200">
@@ -130,24 +133,13 @@
                 <tr class="bg-gray-50">
                   <th>
                   </th>
-                  <td>
-                    <div class="flex items-center space-x-3">
-                        <div class="hidden sm:avatar placeholder mr-2">
-                            <div class="bg-neutral-focus text-neutral-content rounded-full w-12 shadow-lg">
-                              <span>JC</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="font-bold">Joaquin Carbajal</div>
-                        </div>
-                    </div>
-                  </td>
-                  <td><b>Zemlak, Daniel and Leannon</b></td>
-                  <td>Purple</td>
+                  <td><span id="nombreContacto1">Joaquin Carbajal</span></td>
+                  <td>0008965142452469952001</td>
+                  <td>joaquito.capichio</td>
                   <th>
-                    <button class="btn-sm sm:btn rounded-box sm:rounded-box text-red-600 sm:text-red-600 hover:text-white border-none sm:hover:text-white bg-white sm:bg-white hover:bg-red-600 sm:hover:bg-red-600 shadow-lg sm:shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M11 6a3 3 0 11-6 0 3 3 0 016 0zM14 17a6 6 0 00-12 0h12zM13 8a1 1 0 100 2h4a1 1 0 100-2h-4z" />
-                      </svg></button>
+                    <button class="btn-sm rounded-box text-red-600 sm:text-red-600 hover:text-white border-none sm:hover:text-white bg-white sm:bg-white hover:bg-red-600 sm:hover:bg-red-600 shadow-lg sm:shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clip-rule="evenodd" /></svg>
+                    </button>
                   </th>
                 </tr>
               </tbody>
