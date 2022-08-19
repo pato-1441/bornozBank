@@ -11,7 +11,7 @@
   <link rel="shortcut icon" href="../src/assets/logo.png" type="image/x-icon">
 </head>
 
-<body class="bg-gradient-to-b from-green-400 to-cyan-900 ">
+<body class="bg-gradient-to-b from-green-400 to-cyan-900 h-fit sm:h-screen">
   <header>
     <div class="navbar text-white pt-7 px-10">
       <!--arranca navbar start-->
@@ -95,9 +95,8 @@
   </header>
   <main class="container-fluid h-screen">
     <!--arranca login-->
-    <section
-      class="bg-white mt-10 pb-12 w-10/12 sm:w-8/12 md:w-6/12 lg:w-4/12 xl:w-4/12 2xl:w-3/12 mx-auto rounded-box shadow-lg">
-      <div id="welcome-card" class="text-black">
+    <section class="mt-10">
+      <div id="welcome-card" class="bg-white text-black w-10/12 sm:w-8/12 md:w-6/12 mx-auto rounded-box shadow-lg pb-12">
         <h2 class="text-green-400 text-center text-3xl pt-8">¡Bienvenido!</h2>
         <div class="form flex flex-col items-center">
           <!--arranca login usuario-->
@@ -141,18 +140,20 @@
     </section>
     <!--termina login usuario-->
   </main>
-  <footer class="footer footer-center p-5 bg-base-100 text-white">
-    <div>
-      <p><span class="text-sm"> Desarrollado por:</span><br><span class="font-bold text-base">Patricio Albornoz</span>
-      </p>
-      <p>Copyright © 2022 - Todos los derechos Reservados</p>
-    </div>
-    <div>
-      <div class="grid grid-flow-col gap-4">
-        <a href="https://github.com/pato-1441" target="_blank" rel="noopener noreferrer"><i
-            class="fa-brands fa-github fa-2xl"></i></a>
-        <a href="https://www.linkedin.com/in/patoalbornoz/" target="_blank" rel="noopener noreferrer"><i
-            class="fa-brands fa-linkedin fa-2xl"></i></a>
+  <footer class="">
+    <div class="footer footer-center p-5 bg-base-100 text-white relative sm:absolute sm:bottom-0">
+      <div>
+        <p><span class="text-sm"> Desarrollado por:</span><br><span class="font-bold text-base">Patricio Albornoz</span>
+        </p>
+        <p>Copyright © 2022 - Todos los derechos Reservados</p>
+      </div>
+      <div>
+        <div class="grid grid-flow-col gap-4">
+          <a href="https://github.com/pato-1441" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github fa-2xl"></i></a>
+          <a href="https://www.linkedin.com/in/patoalbornoz/" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-linkedin fa-2xl"></i></a>
+        </div>
       </div>
     </div>
   </footer>
