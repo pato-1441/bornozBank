@@ -59,7 +59,7 @@
     </header>
     <main>
         <!--arranca contactos-->
-        <section class="container-fluid mx-auto mt-10 mb-10 p-10 w-11/12 h-fit bg-white rounded-box text-black">
+        <section class="container-fluid mx-auto mt-10 mb-10 p-10 w-11/12 sm:w-6/12 h-fit bg-white rounded-box text-black">
             <div class="flex justify-between mb-4">
                 <h2 class="text-2xl mb-4 ">Contactos</h2>
                 <label for="my-modal-0"
@@ -136,101 +136,10 @@
                 </label>
             </label>
             <!--termina modal añadir contactos-->
-            <div>
-                <div class="text-center grid grid-cols-4 gap-4" id="contenedorContactos">
-                    <!--arranca contacto-->
-                    <label for="my-modal-5" class="btn modal-button font-medium text-white">
-                        <span class="ml-1">Joaquin Carbajal</span>
-                    </label>
-                    <input type="checkbox" id="my-modal-5" class="modal-toggle" />
-                    <!--cuerpo del modal-->
-                    <label for="my-modal-5" class="modal cursor-pointer">
-                        <label
-                            class="modal-box relative w-11/12 sm:w-8/12 h-fit max-w-5xl bg-white text-black flex flex-col"
-                            for="">
-                            <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">Editar contacto</h2>
-                            <div class="form flex flex-col items-center">
-                                <!--arranca añadir contacto-->
-                                <div class="form-control w-full max-w-xs mx-auto pt-4 pb-4" id="editContactForm">
-                                    <!--arranca nombre contacto-->
-                                    <label class="label">
-                                        <span class="label-text text-base text-black">Nombre Completo</span>
-                                    </label>                                    
-                                    <input required type="text" placeholder="Nombre completo"
-                                            class="input input-bordered w-full max-w-xs bg-white" minlength="4"
-                                            maxlength="30" id="inputNameEditContact" />
-                                    <label class="label">
-                                        <span class="label-text-alt text-sm">Joaquin Carbajal</span>                                       
-                                    </label>
-                                    <!--termina nombre contacto-->
-                                    <!--arranca cbu contacto-->
-                                    <label class="label">
-                                        <span class="label-text text-base text-black">CBU</span>
-                                    </label>
-                                    <input required type="text" placeholder="CBU"
-                                        class="input input-bordered w-full max-w-xs bg-white" minlength="22"
-                                        maxlength="22" id="inputCBUEditContact" />
-                                    <label class="label">
-                                        <span class="label-text-alt text-sm">224455020187588991022</span>                                       
-                                    </label>
-                                    <!--termina cbu contacto-->
-                                    <!--arranca alias contacto-->
-                                    <label class="label">
-                                        <span class="label-text text-base text-black">Alias</span>
-                                    </label>
-                                    <input required type="text" placeholder="Alias"
-                                        class="input input-bordered w-full max-w-xs bg-white" minlength="2"
-                                        maxlength="40" id="inputAliasEditContact" />
-                                    <label class="label">
-                                        <span class="label-text-alt text-sm">joaco.carba.brubank</span>                                       
-                                    </label>
-                                    <!--termina alias contacto-->
-                                    <!--boton añadir contacto-->
-                                    <div class="mt-4 flex mx-auto">
-                                        <button type="submit" id="submitEditContact"
-                                            class="btn btn-outline w-1/2 mr-1 text-white hover:text-blue-500 hover:border-blue-500 hover:bg-inherit bg-blue-500 mb-3">Modificar
-                                            contacto
-                                        </button>
-                                        <button type="submit" id="submitDeleteContact"
-                                            class="btn btn-outline w-1/2 text-white hover:text-red-600 hover:border-red-600 hover:bg-inherit bg-red-600 mb-3">Eliminar
-                                            contacto
-                                        </button>
-                                    </div>
-                                    <!--termina añadir contacto-->
-                                    <!--arranca alerta contacto añadido con exito-->
-                                    <div class="alert alert-success bg-green-400 text-white hidden"
-                                        id="alertEditContactSuccess">
-                                        <div><svg xmlns="http://www.w3.org/2000/svg"
-                                                class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
-                                                viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                            <span>Se ha modificado correctamente el contacto.</span>
-                                        </div>
-                                    </div>
-                                    <!--termina alerta contacto añadido con exito-->
-                                    <!--arranca error en añadir contacto-->
-                                    <div class="alert alert-error text-white bg-red-700 hidden" id="alertEditContactError">
-                                        <div>
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
-                                                viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                            <span>Error! Complete todos los campos por favor.</span>
-                                        </div>
-                                    </div>
-                                    <!--termina error en añadir contacto-->
-                                </div>
-                                <!--termina form interno-->
-                            </div>
-                            <!--termina form contacto-->
-                        </label>
-                    </label>
-                    <!--termina modal añadir contactos-->
-                </div>
-                <!--termina contacto uno-->
+            <div class="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-2" id="contenedorContactos">
+                <!--arranca a mostrar contactos-->
+                    
+                <!--termina mostrar contactos-->
             </div>
             <!--termina contactos-->
         </section>
