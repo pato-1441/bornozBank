@@ -62,7 +62,7 @@
         <section class="container-fluid mx-auto mt-10 mb-10 p-10 w-11/12 h-fit bg-white rounded-box text-black">
             <div class="flex justify-between mb-4">
                 <h2 class="text-2xl mb-4 ">Contactos</h2>
-                <label for="my-modal-4"
+                <label for="my-modal-0"
                     class="btn btn-outline btn-success modal-button font-medium rounded-box shadow-lg"><span
                         class="ml-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                             fill="currentColor">
@@ -71,9 +71,9 @@
                         </svg></span>
                 </label>
             </div>
-            <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+            <input type="checkbox" id="my-modal-0" class="modal-toggle" />
             <!--cuerpo del modal-->
-            <label for="my-modal-4" class="modal cursor-pointer">
+            <label for="my-modal-0" class="modal cursor-pointer">
                 <label class="modal-box relative w-11/12 sm:w-8/12 h-fit max-w-5xl bg-white text-black flex flex-col"
                     for="">
                     <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">Complete todos los
@@ -136,8 +136,9 @@
                 </label>
             </label>
             <!--termina modal añadir contactos-->
-            <div class="grid grid-cols-4 gap-4">
-                <div class="text-center">
+            <div>
+                <div class="text-center grid grid-cols-4 gap-4" id="contenedorContactos">
+                    <!--arranca contacto-->
                     <label for="my-modal-5" class="btn modal-button font-medium text-white">
                         <span class="ml-1">Joaquin Carbajal</span>
                     </label>
@@ -229,15 +230,7 @@
                     </label>
                     <!--termina modal añadir contactos-->
                 </div>
-                <div class="bg-gray-200 p-2 rounded-box text-center">
-                    <span id="nombreContacto" class="">Joaquin Carbajal</span>
-                </div>
-                <div class="bg-gray-200 p-2 rounded-box text-center">
-                    <span id="nombreContacto" class="">Joaquin Carbajal</span>
-                </div>
-                <div class="bg-gray-200 p-2 rounded-box text-center">
-                    <span id="nombreContacto" class="">Joaquin Carbajal</span>
-                </div>
+                <!--termina contacto uno-->
             </div>
             <!--termina contactos-->
         </section>
