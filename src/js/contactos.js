@@ -35,6 +35,7 @@ function newContact(){
     if(addContactForm.children[1].value!==''&&addContactForm.children[3].value!==''&&addContactForm.children[5].value!==''){
         let nuevoContacto = new Contact(inputNameAddContact.value,parseInt(inputCBUAddContact.value),inputAliasAddContact.value);
         contacts.push(nuevoContacto);
+        localStorage.setItem('contactos',JSON.stringify(contacts))
         inputNameAddContact.value = '';
         inputCBUAddContact.value = '';
         inputAliasAddContact.value = '';
@@ -49,6 +50,43 @@ function newContact(){
         alertAddContactError.classList.remove('hidden')
         setTimeout(function(){
             alertAddContactError.classList.add('hidden');
+        }, 7500);        
+    }
+}
+
+//Editar contacto
+const inputNameEditContact = document.getElementById('inputNameEditContact');
+const inputCBUEditContact = document.getElementById('inputCBUEditContact');
+const inputAliasEditContact = document.getElementById('inputAliasEditContact');
+const submitEditContact = document.getElementById('submitEditContact');
+const submitDeleteContact = document.getElementById('submitDeleteContact');
+submitEditContact.addEventListener('click',editContact);
+submitDeleteContact.addEventListener('click',deleteContact);
+
+function editContact(){
+    const editContactForm = document.getElementById('editContactForm');
+    const alertEditContactSuccess = document.getElementById('alertEditContactSuccess');
+    const alertEditContactError = document.getElementById('alertEditContactError');
+
+    // Si los campos estan completos
+    if(editContactForm.children[1].value!==''&&editContactForm.children[4].value!==''&&editContactForm.children[7].value!==''){
+        let nuevoContacto = new Contact(inputNameAddContact.value,parseInt(inputCBUAddContact.value),inputAliasAddContact.value);
+        contacts.push(nuevoContacto);
+        localStorage.setItem('contactos',JSON.stringify(contacts))
+        inputNameEditContact.value = '';
+        inputCBUEditContact.value = '';
+        inputAliasEditContact.value = '';
+        alertEditContactError.classList.add('hidden');
+        alertEditContactSuccess.classList.remove('hidden');
+        setTimeout(function(){
+            alertEditContactSuccess.classList.add('hidden');
+            //window.location.href='./contactos.html';
+        }, 5000); 
+    } else {
+        // agrego timeout para que se borre la alerta de error
+        alertEditContactError.classList.remove('hidden')
+        setTimeout(function(){
+            alertEditContactError.classList.add('hidden');
         }, 7500);        
     }
 }
