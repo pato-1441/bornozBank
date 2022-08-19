@@ -23,9 +23,7 @@ class User {
     }
 }
 const users = []
-users.push(new User('Patricio','admin@gmail.com','admin','0','0'));
-users.push(new User('Guillermo','guille@gmail.com','guille','0','0'));
-users.push(new User('Silvina','silvi@gmail.com','silvi','0','0'));
+users.push(new User('invitado','invitado@gmail.com','invitado','0','0'));
 
 // REGISTRO DE USUARIOS
 
@@ -51,7 +49,7 @@ function registerUser(){
         alertSuccess.classList.remove('hidden');
         setTimeout(function(){
             alertSuccess.classList.add('hidden');
-            window.location.href='./dashboard.html'
+            window.location.href='./dashboard.html';
         }, 5000);               
     } else {
         // agrego timeout para que se borre la alerta de error
@@ -84,9 +82,16 @@ function mostrarUsers(){
 
 // Fin Usuarios
 // Log In
-function validarLogin(username,password){
-    if(username==='admin'&&password==='admin'){
-        alert('Sesion iniciada con exito');
+const inputUsernameLogin = document.getElementById('inputUsernameLogin')
+const inputPasswordLogin = document.getElementById('inputPasswordLogin');
+const submitLogin = document.getElementById('submitLogin');
+submitLogin.addEventListener('click',validarLogin)
+
+function validarLogin(){
+    if(inputUsernameLogin.value==='invitado'&&inputPasswordLogin.value==='invitado'){
+        inputUsernameLogin.value==='';
+        window.location.href='./dashboard.html';
+        //localStorage.setItem('usuario', JSON.stringify(nuevoUser));
     } else {
         alert('Ocurrio un error inesperado');
     }
