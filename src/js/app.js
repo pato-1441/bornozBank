@@ -87,12 +87,22 @@ const inputPasswordLogin = document.getElementById('inputPasswordLogin');
 const submitLogin = document.getElementById('submitLogin');
 submitLogin.addEventListener('click',validarLogin)
 
+// Cargo datos default
+inputUsernameLogin.value='invitado';
+inputPasswordLogin.value='invitado';
+
 function validarLogin(){
     if(inputUsernameLogin.value==='invitado'&&inputPasswordLogin.value==='invitado'){
-        inputUsernameLogin.value==='';
+        let invitadoUser = new User(inputUsernameLogin.value,inputPasswordLogin.value,'invitado@mail.com',localStorage.setItem('usuarioBalanceARS',JSON.stringify('0')),localStorage.setItem('usuarioBalanceUSD',JSON.stringify('0')));
+        inputUsernameLogin.value='';
+        inputPasswordLogin.value='';
         window.location.href='./dashboard.html';
-        //localStorage.setItem('usuario', JSON.stringify(nuevoUser));
+        alertLoginError.classList.add('hidden'); 
+        localStorage.setItem('usuario', JSON.stringify(invitadoUser));
     } else {
-        alert('Ocurrio un error inesperado');
+        alertLoginError.classList.remove('hidden')
+        setTimeout(function(){
+            alertLoginError.classList.add('hidden');
+        }, 5000);   
     }
 }
