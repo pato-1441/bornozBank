@@ -99,7 +99,7 @@
                             <label class="label">
                                 <span class="label-text text-base text-black">Alias</span>
                             </label>
-                            <input required type="password" placeholder="ej. joaco.carba.brubank" id="inputAliasAddContact"
+                            <input required type="password" placeholder="ej. johndoecitybank" id="inputAliasAddContact"
                                 class="input input-bordered w-full max-w-xs bg-white" minlength="2" maxlength="40" />
                             <!--termina alias contacto-->
                             <!--boton añadir contacto-->
@@ -147,9 +147,7 @@
                         <label
                             class="modal-box relative w-11/12 sm:w-8/12 h-fit max-w-5xl bg-white text-black flex flex-col"
                             for="">
-                            <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">Complete todos
-                                los
-                                campos con la informacion nueva</h2>
+                            <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">Editar contacto</h2>
                             <div class="form flex flex-col items-center">
                                 <!--arranca añadir contacto-->
                                 <div class="form-control w-full max-w-xs mx-auto pt-4 pb-4" id="addContactForm">
@@ -187,9 +185,16 @@
                                     </label>
                                     <!--termina alias contacto-->
                                     <!--boton añadir contacto-->
-                                    <button type="submit" id="submitEditContact"
-                                        class="btn mt-4 btn-outline text-white hover:text-blue-500 hover:border-blue-500 hover:bg-inherit bg-blue-500 mb-3">Modificar
-                                        contacto</button>
+                                    <div class="mt-4 flex mx-auto">
+                                        <button type="submit" id="submitEditContact"
+                                            class="btn btn-outline w-1/2 mr-1 text-white hover:text-blue-500 hover:border-blue-500 hover:bg-inherit bg-blue-500 mb-3">Modificar
+                                            contacto
+                                        </button>
+                                        <button type="submit" id="submitDeleteContact"
+                                            class="btn btn-outline w-1/2 text-white hover:text-red-600 hover:border-red-600 hover:bg-inherit bg-red-600 mb-3">Eliminar
+                                            contacto
+                                        </button>
+                                    </div>
                                     <!--termina añadir contacto-->
                                     <!--arranca alerta contacto añadido con exito-->
                                     <div class="alert alert-success bg-green-400 text-white hidden"

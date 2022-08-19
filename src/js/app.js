@@ -48,7 +48,7 @@ function registerUser(){
         formularioRegistro.children[5].value = '';
         // agrego timeout para que se borre la alerta de exito y rediriga al dashboard
         alertError.classList.add('hidden'); 
-        alertSuccess.classList.remove('hidden')
+        alertSuccess.classList.remove('hidden');
         setTimeout(function(){
             alertSuccess.classList.add('hidden');
             window.location.href='./dashboard.html'
