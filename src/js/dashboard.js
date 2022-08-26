@@ -26,17 +26,27 @@ const inputRetirarARSConfirmar = document.getElementById('inputRetirarARSConfirm
 const btnRetirarARSConfirmar = document.getElementById('btnRetirarARSConfirmar');
 btnRetirarARSConfirmar.addEventListener('click',()=>{retirarARS()});
 
+// movimientos
+class MovimientoBancarioARS{
+    constructor(id,movimiento,debe,haber,saldo) {
+        this.id = id;
+        this.movimiento = movimiento;
+        this.debe = debe;
+        this.haber = haber;
+        this.saldo = saldo;
+    }
+}
+let movimientos = [];
+localStorage.setItem('movimientosUsuario',JSON.stringify(movimientos));
+
 const retirarARS=()=>{
-    let total = JSON.parse(localStorage.getItem('usuarioBalanceARS'));
+    let total = parseInt(JSON.parse(localStorage.getItem('usuarioBalanceARS')));
+    let generadorID = parseInt(Math.random()*1000);
     if(inputRetirarARSConfirmar.value>0&&inputRetirarARSConfirmar.value<=total){
         let balanceARSRetirado = (parseInt(inputRetirarARSConfirmar.value));
-        movimientoDepositoARS.id=2;
-        movimientoDepositoARS.movimiento='retiro';
-        movimientoDepositoARS.debe= balanceARSRetirado;
-        movimientoDepositoARS.haber= 0;
-        movimientoDepositoARS.saldo= total-balanceARSRetirado;
-        movimientos.push(movimientoDepositoARS);
         total = total-balanceARSRetirado;
+        let movimiento = new MovimientoBancarioARS(generadorID,'retiro',balanceARSRetirado,0,total)
+        movimientos.push(movimiento);        
         localStorage.setItem('movimientosUsuario',JSON.stringify(movimientos));
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(total));
         balanceARSTxt.innerHTML=`${total}`
@@ -81,19 +91,16 @@ btnDepositarARSConfirmar.addEventListener('click',()=>{depositarARS()});
 }*/
 
 const depositarARS=()=>{
+    let total = parseInt(JSON.parse(localStorage.getItem('usuarioBalanceARS')));
+    let generadorID = parseInt(Math.random()*1000);
     if(inputDepositarARSConfirmar.value>1){
-        let total = JSON.parse(localStorage.getItem('usuarioBalanceARS'));
-        let balanceARSDepositado = (parseInt(inputDepositarARSConfirmar.value));
-        movimientoDepositoARS.id=2;
-        movimientoDepositoARS.movimiento='deposito';
-        movimientoDepositoARS.debe=0;
-        movimientoDepositoARS.haber= balanceARSDepositado;
-        movimientoDepositoARS.saldo= parseInt(total)+balanceARSDepositado;
-        movimientos.push(movimientoDepositoARS);
-        total = parseInt(total)+balanceARSDepositado;
+        let balanceARSDepositado = parseInt(inputDepositarARSConfirmar.value);
+        total = total+balanceARSDepositado;
+        const movimiento = new MovimientoBancarioARS(generadorID,'deposito',0,balanceARSDepositado,total)
+        movimientos.push(movimiento);
         localStorage.setItem('movimientosUsuario',JSON.stringify(movimientos));
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(total));
-        balanceARSTxt.innerHTML=`${total}`
+        balanceARSTxt.innerHTML=`${total}`        
     } else {
         const alertDepositarError=document.getElementById('alertDepositarError');
         alertDepositarError.classList.remove('hidden');
@@ -103,14 +110,6 @@ const depositarARS=()=>{
     }
 }
 
-let movimientos = [];
-let movimientoDepositoARS={
-    id:0,
-    movimiento:'',
-    debe:0,
-    haber:0,
-    saldo:0
-};
 //fin botones pesos
 
 // muestro balance usd en dashboard
@@ -146,6 +145,7 @@ const retirarUSD=()=>{
 const inputDepositarUSDConfirmar = document.getElementById('inputDepositarUSDConfirmar');
 const btnDepositarUSDConfirmar = document.getElementById('btnDepositarUSDConfirmar');
 btnDepositarUSDConfirmar.addEventListener('click',()=>{depositarUSD()});
+
 const depositarUSD=()=>{
     if(inputDepositarUSDConfirmar.value>1){
         let balanceUSDDepositado = (parseInt(inputDepositarUSDConfirmar.value));
@@ -164,23 +164,6 @@ const depositarUSD=()=>{
 }
 
 // logs balances
-const logsARS =[];
-const logsUSD = {
-    logRetiroUSD: [],
-    logDepositoUSD:[]
-};
-
-localStorage.setItem('logsARS',JSON.stringify(logsARS));
-localStorage.setItem('logsUSD',JSON.stringify(logsUSD));
-
-const logRetirarARS=(inputRetirarARSConfirmar)=>{
-    debugger
-    //let logRetiroARS = inputRetirarARSConfirmar.value;
-    logsARS[0].logRetiroARS.push(inputRetirarARSConfirmar.value)
-    localStorage.setItem('logsARS',JSON.stringify(logsARS));
-}
-
-
 const logs = document.getElementById('contenedorLogs');
 logs.innerHTML=`
                 <div class="overflow-x-auto w-full text-black">
