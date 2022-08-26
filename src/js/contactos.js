@@ -1,9 +1,9 @@
 
 // Log Out
 const btnLogOut = document.getElementById('btnLogOut');
-btnLogOut.addEventListener('click',logOut);
+btnLogOut.addEventListener('click',()=>{logOut()});
 
-function logOut(){
+const logOut=()=>{
     //Elimino el localStorage antes de irme
     //localStorage.removeItem('usuario');
     localStorage.clear();
@@ -136,9 +136,9 @@ const inputNameAddContact = document.getElementById('inputNameAddContact');
 const inputCBUAddContact = document.getElementById('inputCBUAddContact');
 const inputAliasAddContact = document.getElementById('inputAliasAddContact');
 const submitAddContact = document.getElementById('submitAddContact');
-submitAddContact.addEventListener('click',newContact);
+submitAddContact.addEventListener('click',()=>{newContact()});
 
-function newContact(){
+const newContact=()=>{
     const addContactForm = document.getElementById('addContactForm');
     const alertAddContactSuccess = document.getElementById('alertAddContactSuccess');
     const alertAddContactError = document.getElementById('alertAddContactError');
@@ -172,10 +172,10 @@ const inputCBUEditContact = document.getElementById('inputCBUEditContact');
 const inputAliasEditContact = document.getElementById('inputAliasEditContact');
 const submitEditContact = document.getElementById('submitEditContact');
 const submitDeleteContact = document.getElementById('submitDeleteContact');
-submitEditContact.addEventListener('click',editContact);
+submitEditContact.addEventListener('click',()=>{editContact()});
 //submitDeleteContact.addEventListener('click',deleteContact);
 
-function editContact(){
+const editContact=()=>{
     const editContactForm = document.getElementById('editContactForm');
     const alertEditContactSuccess = document.getElementById('alertEditContactSuccess');
     const alertEditContactError = document.getElementById('alertEditContactError');
@@ -203,7 +203,7 @@ function editContact(){
     }
 }
 
-function removeContact(){
+const removeContact=()=>{
     let removedContact = (contacts[contacts.length-1].contactFullname);
     let remove = confirm('¿Desea remover el usuario: '+(contacts[contacts.length-1].contactFullname)+'?');
     if(remove){

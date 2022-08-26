@@ -60,7 +60,7 @@
       <div class="grid grid-cols-4 grid-rows-12 gap-12">
         <!--balances-->
         <!--texto bienvenida-->
-        <h1 class="text-black font-semibold text-3xl col-span-4">¡Bienvenido de vuelta <span id="loggedUser"></span>!</h1>
+        <h1 class="text-black font-semibold text-3xl col-span-4">¡Bienvenid@ <span id="loggedUser"></span>!</h1>
         <!--fin texto bienvenida-->
         <!--balance pesos-->
         <div class="stats text-black col-span-4 md:col-span-2 row-span-3 bg-gray-100 rounded-box">
@@ -183,94 +183,96 @@
         <!--termina balance dolares-->
         <!--terminan balances-->
         <!--arranca movimientos-->
-        <div class="overflow-x-auto w-full col-span-4 text-black">
-          <h2 class="text-2xl mb-4">Movimientos</h2>            
-          <table class="table-compact sm:table-normal w-full">
-            <!-- head -->
-            <tbody>
-              <!-- row 1 -->
-              <tr class="bg-gray-100">
-                <td>
-                  <div class="flex items-center space-x-3">
-                    <div class="avatar placeholder mr-2">
-                      <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                        <span>JC</span>
+        <div id="contenedorLogs" class="col-span-4">
+          <div class="overflow-x-auto w-full text-black">
+            <h2 class="text-2xl mb-4">Movimientos</h2>            
+            <table class="table-compact sm:table-normal w-full">
+              <!-- head -->
+              <tbody>
+                <!-- row 1 -->
+                <tr class="bg-gray-100">
+                  <td>
+                    <div class="flex items-center space-x-3">
+                      <div class="avatar placeholder mr-2">
+                        <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                          <span>JC</span>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="font-bold">Joaquin Carbajal</div>
+                        <div class="text-sm opacity-50">Hoy</div>
                       </div>
                     </div>
-                    <div>
-                      <div class="font-bold">Joaquin Carbajal</div>
-                      <div class="text-sm opacity-50">Hoy</div>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$1.500</span></td>
-                <th>
-                  <button class="btn btn-ghost btn-xs">Detalles</button>
-                </th>
-              </tr>
-              <!-- row 2 -->
-              <tr>
-                <td>
-                  <div class="flex items-center space-x-3">
-                    <div class="avatar placeholder mr-2">
-                      <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                        <span>AM</span>
+                  </td>
+                  <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$1.500</span></td>
+                  <th>
+                    <button class="btn btn-ghost btn-xs">Detalles</button>
+                  </th>
+                </tr>
+                <!-- row 2 -->
+                <tr>
+                  <td>
+                    <div class="flex items-center space-x-3">
+                      <div class="avatar placeholder mr-2">
+                        <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                          <span>AM</span>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="font-bold">Anacleto Medina</div>
+                        <div class="text-sm opacity-50">Ayer</div>
                       </div>
                     </div>
-                    <div>
-                      <div class="font-bold">Anacleto Medina</div>
-                      <div class="text-sm opacity-50">Ayer</div>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$850</span></td>
-                <th>
-                  <button class="btn btn-ghost btn-xs">Detalles</button>
-                </th>
-              </tr>
-              <!-- row 3 -->
-              <tr class="bg-gray-100">
-                <td>
-                  <div class="flex items-center space-x-3">
-                    <div class="avatar placeholder mr-2">
-                      <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                        <span>JL</span>
+                  </td>
+                  <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$850</span></td>
+                  <th>
+                    <button class="btn btn-ghost btn-xs">Detalles</button>
+                  </th>
+                </tr>
+                <!-- row 3 -->
+                <tr class="bg-gray-100">
+                  <td>
+                    <div class="flex items-center space-x-3">
+                      <div class="avatar placeholder mr-2">
+                        <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                          <span>JL</span>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="font-bold">Jeronimo Lache</div>
+                        <div class="text-sm opacity-50">Antiayer</div>
                       </div>
                     </div>
-                    <div>
-                      <div class="font-bold">Jeronimo Lache</div>
-                      <div class="text-sm opacity-50">Antiayer</div>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$3.750</span></td>
-                <th>
-                  <button class="btn btn-ghost btn-xs">Detalles</button>
-                </th>
-              </tr>
-              <!-- row 4 -->
-              <tr>
-                <td>
-                  <div class="flex items-center space-x-3">
-                    <div class="avatar placeholder mr-2">
-                      <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                        <span>NP</span>
+                  </td>
+                  <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$3.750</span></td>
+                  <th>
+                    <button class="btn btn-ghost btn-xs">Detalles</button>
+                  </th>
+                </tr>
+                <!-- row 4 -->
+                <tr>
+                  <td>
+                    <div class="flex items-center space-x-3">
+                      <div class="avatar placeholder mr-2">
+                        <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                          <span>NP</span>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="font-bold">Nancy Pazos</div>
+                        <div class="text-sm opacity-50">05/08/22</div>
                       </div>
                     </div>
-                    <div>
-                      <div class="font-bold">Nancy Pazos</div>
-                      <div class="text-sm opacity-50">05/08/22</div>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$6.300</span></td>
-                <th>
-                  <button class="btn btn-ghost btn-xs">Detalles</button>
-                </th>
-              </tr>
-            </tbody>
-            <!-- foot -->
-          </table>
+                  </td>
+                  <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$6.300</span></td>
+                  <th>
+                    <button class="btn btn-ghost btn-xs">Detalles</button>
+                  </th>
+                </tr>
+              </tbody>
+              <!-- foot -->
+            </table>
+          </div>
         </div>
       </div>
     </section>
