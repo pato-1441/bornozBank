@@ -16,6 +16,10 @@ const logOut=()=>{
     window.location.href='./index.html';
 }
 
+const refreshSite=()=>{
+    window.location.href='./dashboard.html';
+}
+
 // muestro balance ars en dashboard
 const balanceARSTxt = document.getElementById('balanceARSTxt');
 let usuarioBalanceARS = JSON.parse(localStorage.getItem('usuarioBalanceARS'))
@@ -54,6 +58,7 @@ const retirarARS=()=>{
         inputRetirarARSConfirmar.value = '';
         const loadingRetirar = document.getElementById('loadingRetirar');
         loadingRetirar.classList.remove('hidden');
+        refreshSite();
         setTimeout(function(){
             window.location.href='./dashboard.html';
         }, 500);
@@ -81,7 +86,8 @@ const depositarARS=()=>{
         localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosARS));
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(total));
         balanceARSTxt.innerHTML=`${total}`;
-        inputDepositarARSConfirmar.value = '';        
+        inputDepositarARSConfirmar.value = '';  
+        refreshSite();      
     } else {
         const alertDepositarError=document.getElementById('alertDepositarError');
         alertDepositarError.classList.remove('hidden');
@@ -117,6 +123,7 @@ const retirarUSD=()=>{
         inputRetirarUSDConfirmar.value = '';
         const loadingRetirar = document.getElementById('loadingRetirar');
         loadingRetirar.classList.remove('hidden');
+        refreshSite();
         setTimeout(function(){
             window.location.href='./dashboard.html';
         }, 500);
@@ -144,7 +151,8 @@ const depositarUSD=()=>{
         localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD));
         localStorage.setItem('usuarioBalanceUSD', JSON.stringify(total));
         balanceUSDTxt.innerHTML=`${total}`;
-        inputDepositarUSDConfirmar.value = '';        
+        inputDepositarUSDConfirmar.value = '';
+        refreshSite();        
     } else {
         const alertDepositarErrorUSD=document.getElementById('alertDepositarErrorUSD');
         alertDepositarErrorUSD.classList.remove('hidden');
@@ -155,95 +163,72 @@ const depositarUSD=()=>{
 }
 
 // logs balances
-const logs = document.getElementById('contenedorLogs');
-logs.innerHTML=`
-                <div class="overflow-x-auto w-full text-black">
-                <h2 class="text-2xl mb-4">Movimientos</h2>            
-                <table class="table-compact sm:table-normal w-full">
-                <!-- head -->
-                <tbody>
-                    <!-- row 1 -->
-                    <tr class="bg-gray-100">
-                    <td>
-                        <div class="flex items-center space-x-3">
-                        <div class="avatar placeholder mr-2">
-                            <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                            <span>JC</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="font-bold">Joaquin Carbajal</div>
-                            <div class="text-sm opacity-50">Hoy</div>
-                        </div>
-                        </div>
-                    </td>
-                    <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$1.500</span></td>
-                    <th>
-                        <button class="btn btn-ghost btn-xs">Detalles</button>
-                    </th>
-                    </tr>
-                    <!-- row 2 -->
-                    <tr>
-                    <td>
-                        <div class="flex items-center space-x-3">
-                        <div class="avatar placeholder mr-2">
-                            <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                            <span>AM</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="font-bold">Anacleto Medina</div>
-                            <div class="text-sm opacity-50">Ayer</div>
-                        </div>
-                        </div>
-                    </td>
-                    <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$850</span></td>
-                    <th>
-                        <button class="btn btn-ghost btn-xs">Detalles</button>
-                    </th>
-                    </tr>
-                    <!-- row 3 -->
-                    <tr class="bg-gray-100">
-                    <td>
-                        <div class="flex items-center space-x-3">
-                        <div class="avatar placeholder mr-2">
-                            <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                            <span>JL</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="font-bold">Jeronimo Lache</div>
-                            <div class="text-sm opacity-50">Antiayer</div>
-                        </div>
-                        </div>
-                    </td>
-                    <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$3.750</span></td>
-                    <th>
-                        <button class="btn btn-ghost btn-xs">Detalles</button>
-                    </th>
-                    </tr>
-                    <!-- row 4 -->
-                    <tr>
-                    <td>
-                        <div class="flex items-center space-x-3">
-                        <div class="avatar placeholder mr-2">
-                            <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                            <span>NP</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="font-bold">Jecsi Peras</div>
-                            <div class="text-sm opacity-50">05/08/22</div>
-                        </div>
-                        </div>
-                    </td>
-                    <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$6.300</span></td>
-                    <th>
-                        <button class="btn btn-ghost btn-xs">Detalles</button>
-                    </th>
-                    </tr>
-                </tbody>
-                <!-- foot -->
-                </table>
-                </div>
-               `
+
+// distinguir deposito de retiro
+    /*
+    let tipoMovimiento = JSON.parse(localStorage.getItem('movimientosUsuarioARS'));
+    let tipoMovimientoUSD = JSON.parse(localStorage.getItem('movimientosUsuarioUSD'));
+
+    tipoMovimiento.forEach(element => {
+            switch (element.movimiento) {
+                case 'deposito':
+                    return '+';
+                case 'retiro':
+                    return '-';        
+                default:
+                    break;
+        }
+    });
+    */
+// fin distinguir deposito de retiro
+
+const contenedorMovimientosARS = document.getElementById('contenedorMovimientosARS');
+const contenedorMovimientosUSD = document.getElementById('contenedorMovimientosUSD');
+
+let movimientoARS = JSON.parse(localStorage.getItem('movimientosUsuarioARS'));
+let movimientoUSD = JSON.parse(localStorage.getItem('movimientosUsuarioUSD'));
+
+const muestroMovimientos=()=>{
+    movimientosARS.reverse();
+    movimientosARS.forEach(movimiento => {
+        contenedorMovimientosARS.innerHTML+=`<tr class="">
+                            <td>
+                                <div class="flex items-center space-x-3">
+                                <div class="avatar placeholder mr-2">
+                                    <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                                    <span></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="font-bold capitalize">${movimiento.movimiento}</div>
+                                    <div class="text-sm opacity-50">ID: ${movimiento.id}</div>
+                                </div>
+                                </div>
+                            </td>
+                            <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$${movimiento.haber}</span></td>
+                            <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$${movimiento.debe}</span></td>
+                        </tr>` 
+    });
+    // dolares
+    movimientosUSD.reverse();
+    movimientosUSD.forEach(movimiento => {
+        contenedorMovimientosUSD.innerHTML+=`<tr class="">
+                            <td>
+                                <div class="flex items-center space-x-3">
+                                <div class="avatar placeholder mr-2">
+                                    <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                                    <span></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="font-bold capitalize">${movimiento.movimiento}</div>
+                                    <div class="text-sm opacity-50">ID: ${movimiento.id}</div>
+                                </div>
+                                </div>
+                            </td>
+                            <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$${movimiento.haber}</span></td>
+                            <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$${movimiento.debe}</span></td>
+                        </tr>` 
+    });
+};
+muestroMovimientos();

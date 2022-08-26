@@ -24,7 +24,7 @@ class User {
         this.password = prompt('Ingrese su contraseña nueva');                    
     }
 }
-const users = []
+const users = [];
 let movimientosARS = [];
 let movimientosUSD = [];
 users.push(new User('invitado','invitado@gmail.com','invitado','0','0',JSON.stringify(movimientosARS),JSON.stringify(movimientosUSD)));
