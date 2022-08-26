@@ -36,8 +36,9 @@ class MovimientoBancarioARS{
         this.saldo = saldo;
     }
 }
-let movimientos = [];
-localStorage.setItem('movimientosUsuario',JSON.stringify(movimientos));
+
+let movimientosARS = JSON.parse(localStorage.getItem('movimientosUsuarioARS'));
+let movimientosUSD = [];
 
 const retirarARS=()=>{
     let total = parseInt(JSON.parse(localStorage.getItem('usuarioBalanceARS')));
@@ -46,20 +47,16 @@ const retirarARS=()=>{
         let balanceARSRetirado = (parseInt(inputRetirarARSConfirmar.value));
         total = total-balanceARSRetirado;
         let movimiento = new MovimientoBancarioARS(generadorID,'retiro',balanceARSRetirado,0,total)
-        movimientos.push(movimiento);        
-        localStorage.setItem('movimientosUsuario',JSON.stringify(movimientos));
+        movimientosARS.push(movimiento);        
+        localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosARS));
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(total));
         balanceARSTxt.innerHTML=`${total}`
-        /*usuarioBalanceARS = (usuarioBalanceARS)-(inputRetirarARSConfirmar.value);
-        localStorage.setItem('usuarioBalanceARS', JSON.stringify(usuarioBalanceARS));
-        balanceARSTxt.innerHTML=`${usuarioBalanceARS}`;
-        logRetirarARS(inputRetirarARSConfirmar);
         inputRetirarARSConfirmar.value = '';
         const loadingRetirar = document.getElementById('loadingRetirar');
         loadingRetirar.classList.remove('hidden');
         setTimeout(function(){
             window.location.href='./dashboard.html';
-        }, 500);*/ 
+        }, 500);
     } else {
         const alertRetirarError=document.getElementById('alertRetirarError');
         alertRetirarError.classList.remove('hidden');
@@ -73,34 +70,18 @@ const inputDepositarARSConfirmar = document.getElementById('inputDepositarARSCon
 const btnDepositarARS = document.getElementById('btnDepositarARS');
 btnDepositarARSConfirmar.addEventListener('click',()=>{depositarARS()});
 
-/*const depositarARS=()=>{
-    if(inputDepositarARSConfirmar.value>1){
-        let balanceARSDepositado = (parseInt(inputDepositarARSConfirmar.value));
-        usuarioBalanceARS = parseInt(balanceARSDepositado+JSON.parse(usuarioBalanceARS));
-        localStorage.setItem('usuarioBalanceARS', JSON.stringify(usuarioBalanceARS));
-        balanceARSTxt.innerHTML=`${usuarioBalanceARS}`
-        inputDepositarARSConfirmar.value = '';
-        window.location.href='./dashboard.html';
-    } else {
-        const alertDepositarError=document.getElementById('alertDepositarError');
-        alertDepositarError.classList.remove('hidden');
-        setTimeout(function(){
-            alertDepositarError.classList.add('hidden');
-        }, 7000); 
-    }
-}*/
-
 const depositarARS=()=>{
     let total = parseInt(JSON.parse(localStorage.getItem('usuarioBalanceARS')));
     let generadorID = parseInt(Math.random()*1000);
     if(inputDepositarARSConfirmar.value>1){
         let balanceARSDepositado = parseInt(inputDepositarARSConfirmar.value);
         total = total+balanceARSDepositado;
-        const movimiento = new MovimientoBancarioARS(generadorID,'deposito',0,balanceARSDepositado,total)
-        movimientos.push(movimiento);
-        localStorage.setItem('movimientosUsuario',JSON.stringify(movimientos));
+        const movimiento = new MovimientoBancarioARS(generadorID,'deposito',0,balanceARSDepositado,total);
+        movimientosARS.push(movimiento);
+        localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosARS));
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(total));
-        balanceARSTxt.innerHTML=`${total}`        
+        balanceARSTxt.innerHTML=`${total}`;
+        inputDepositarARSConfirmar.value = '';        
     } else {
         const alertDepositarError=document.getElementById('alertDepositarError');
         alertDepositarError.classList.remove('hidden');

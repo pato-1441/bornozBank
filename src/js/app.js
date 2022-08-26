@@ -5,12 +5,14 @@
 //
 // Usuarios
 class User {
-    constructor(username,mail,password,balanceARS,balanceUSD){
+    constructor(username,mail,password,balanceARS,balanceUSD,movimientosUsuarioARS,movimientosUsuarioUSD){
         this.username = username;
         this.mail = mail;
         this.password = password;
         this.balanceARS = balanceARS;
         this.balanceUSD = balanceUSD;
+        this.movimientosUsuarioARS = movimientosUsuarioARS;
+        this.movimientosUsuarioUSD = movimientosUsuarioUSD;
     }
     updateUsername(){
         this.username = prompt('Ingrese su nombre nuevo:');
@@ -23,7 +25,9 @@ class User {
     }
 }
 const users = []
-users.push(new User('invitado','invitado@gmail.com','invitado','0','0'));
+let movimientosARS = [];
+let movimientosUSD = [];
+users.push(new User('invitado','invitado@gmail.com','invitado','0','0',JSON.stringify(movimientosARS),JSON.stringify(movimientosUSD)));
 
 // REGISTRO DE USUARIOS
 
@@ -37,7 +41,7 @@ function registerUser(){
 
     //Si los campos están completos
     if(formularioRegistro.children[1].value!==''&&formularioRegistro.children[3].value!==''&&formularioRegistro.children[5].value!==''){
-        let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value,localStorage.setItem('usuarioBalanceARS',JSON.stringify('0')),localStorage.setItem('usuarioBalanceUSD',JSON.stringify('0')));
+        let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value,localStorage.setItem('usuarioBalanceARS',JSON.stringify('0')),localStorage.setItem('usuarioBalanceUSD',JSON.stringify('0')),localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosUSD)),localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD)));
         //Creo el usuario y lo guardo en localStorage
         localStorage.setItem('usuario', JSON.stringify(nuevoUser));
         //Limpio el formulario
@@ -59,28 +63,8 @@ function registerUser(){
         }, 5000);        
     }
 }
-
-// FIN REGISTRO DE USUARIOS
-
-function removeUser(){
-    let removedUser = (users[users.length-1].username);
-    let remove = confirm('¿Desea remover el usuario: '+(users[users.length-1].username)+'?');
-    if(remove){
-        users.pop();
-        alert('El usuario '+removedUser+ ' se ha eliminado correctamente.');
-    } else {
-        alert('El usuario '+removedUser+' no ha sido eliminado/a.');
-    }   
-    
-}
-
-function mostrarUsers(){
-    users.forEach((user)=>{
-        console.table(user);
-    })
-}
-
 // Fin Usuarios
+
 // Log In
 const inputUsernameLogin = document.getElementById('inputUsernameLogin')
 const inputPasswordLogin = document.getElementById('inputPasswordLogin');
@@ -93,7 +77,7 @@ inputPasswordLogin.value='invitado';
 
 function validarLogin(){
     if(inputUsernameLogin.value==='invitado'&&inputPasswordLogin.value==='invitado'){
-        let invitadoUser = new User(inputUsernameLogin.value,inputPasswordLogin.value,'invitado@mail.com',localStorage.setItem('usuarioBalanceARS',JSON.stringify('0')),localStorage.setItem('usuarioBalanceUSD',JSON.stringify('0')));
+        let invitadoUser = new User(inputUsernameLogin.value,inputPasswordLogin.value,'invitado@mail.com',localStorage.setItem('usuarioBalanceARS',JSON.stringify('0')),localStorage.setItem('usuarioBalanceUSD',JSON.stringify('0')),localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosUSD)),localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD)));
         inputUsernameLogin.value='';
         inputPasswordLogin.value='';
         window.location.href='./dashboard.html';
