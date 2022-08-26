@@ -27,7 +27,7 @@ const btnRetirarARSConfirmar = document.getElementById('btnRetirarARSConfirmar')
 btnRetirarARSConfirmar.addEventListener('click',()=>{retirarARS()});
 
 // movimientos
-class MovimientoBancarioARS{
+class MovimientoBancario{
     constructor(id,movimiento,debe,haber,saldo) {
         this.id = id;
         this.movimiento = movimiento;
@@ -38,7 +38,7 @@ class MovimientoBancarioARS{
 }
 
 let movimientosARS = JSON.parse(localStorage.getItem('movimientosUsuarioARS'));
-let movimientosUSD = [];
+let movimientosUSD = JSON.parse(localStorage.getItem('movimientosUsuarioUSD'));
 
 const retirarARS=()=>{
     let total = parseInt(JSON.parse(localStorage.getItem('usuarioBalanceARS')));
@@ -46,7 +46,7 @@ const retirarARS=()=>{
     if(inputRetirarARSConfirmar.value>0&&inputRetirarARSConfirmar.value<=total){
         let balanceARSRetirado = (parseInt(inputRetirarARSConfirmar.value));
         total = total-balanceARSRetirado;
-        let movimiento = new MovimientoBancarioARS(generadorID,'retiro',balanceARSRetirado,0,total)
+        let movimiento = new MovimientoBancario(generadorID,'retiro',balanceARSRetirado,0,total)
         movimientosARS.push(movimiento);        
         localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosARS));
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(total));
@@ -76,7 +76,7 @@ const depositarARS=()=>{
     if(inputDepositarARSConfirmar.value>1){
         let balanceARSDepositado = parseInt(inputDepositarARSConfirmar.value);
         total = total+balanceARSDepositado;
-        const movimiento = new MovimientoBancarioARS(generadorID,'deposito',0,balanceARSDepositado,total);
+        const movimiento = new MovimientoBancario(generadorID,'deposito',0,balanceARSDepositado,total);
         movimientosARS.push(movimiento);
         localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosARS));
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(total));
@@ -104,16 +104,22 @@ const btnRetirarUSDConfirmar = document.getElementById('btnRetirarUSDConfirmar')
 btnRetirarUSDConfirmar.addEventListener('click',()=>{retirarUSD()});
 
 const retirarUSD=()=>{
+    let total = parseInt(JSON.parse(localStorage.getItem('usuarioBalanceUSD')));
+    let generadorID = parseInt(Math.random()*1000);
     if(inputRetirarUSDConfirmar.value>0&&inputRetirarUSDConfirmar.value<=usuarioBalanceUSD){
-        usuarioBalanceUSD = (usuarioBalanceUSD)-(inputRetirarUSDConfirmar.value);
-        localStorage.setItem('usuarioBalanceUSD', JSON.stringify(usuarioBalanceUSD));
-        balanceUSDTxt.innerHTML=`${usuarioBalanceUSD}`;
+        let balanceUSDRetirado = (parseInt(inputRetirarUSDConfirmar.value));
+        total = total-balanceUSDRetirado;
+        let movimiento = new MovimientoBancario(generadorID,'retiro',balanceUSDRetirado,0,total)
+        movimientosUSD.push(movimiento);        
+        localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD));
+        localStorage.setItem('usuarioBalanceUSD', JSON.stringify(total));
+        balanceUSDTxt.innerHTML=`${total}`
         inputRetirarUSDConfirmar.value = '';
-        const loadingRetirarUSD = document.getElementById('loadingRetirarUSD');
-        loadingRetirarUSD.classList.remove('hidden');
+        const loadingRetirar = document.getElementById('loadingRetirar');
+        loadingRetirar.classList.remove('hidden');
         setTimeout(function(){
-            window.location.href='./dashboard.html';;
-        }, 2500); 
+            window.location.href='./dashboard.html';
+        }, 500);
     } else {
         const alertRetirarErrorUSD=document.getElementById('alertRetirarErrorUSD');
         alertRetirarErrorUSD.classList.remove('hidden');
@@ -128,13 +134,17 @@ const btnDepositarUSDConfirmar = document.getElementById('btnDepositarUSDConfirm
 btnDepositarUSDConfirmar.addEventListener('click',()=>{depositarUSD()});
 
 const depositarUSD=()=>{
+    let total = parseInt(JSON.parse(localStorage.getItem('usuarioBalanceUSD')));
+    let generadorID = parseInt(Math.random()*1000);
     if(inputDepositarUSDConfirmar.value>1){
-        let balanceUSDDepositado = (parseInt(inputDepositarUSDConfirmar.value));
-        usuarioBalanceUSD = parseInt(balanceUSDDepositado+JSON.parse(usuarioBalanceUSD));
-        localStorage.setItem('usuarioBalanceUSD', JSON.stringify(usuarioBalanceUSD));
-        balanceUSDTxt.innerHTML=`${usuarioBalanceUSD}`
-        inputDepositarUSDConfirmar.value = '';
-        window.location.href='./dashboard.html';
+        let balanceUSDDepositado = parseInt(inputDepositarUSDConfirmar.value);
+        total = total+balanceUSDDepositado;
+        const movimiento = new MovimientoBancario(generadorID,'deposito',0,balanceUSDDepositado,total);
+        movimientosUSD.push(movimiento);
+        localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD));
+        localStorage.setItem('usuarioBalanceUSD', JSON.stringify(total));
+        balanceUSDTxt.innerHTML=`${total}`;
+        inputDepositarUSDConfirmar.value = '';        
     } else {
         const alertDepositarErrorUSD=document.getElementById('alertDepositarErrorUSD');
         alertDepositarErrorUSD.classList.remove('hidden');
