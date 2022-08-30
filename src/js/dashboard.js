@@ -37,6 +37,7 @@ const generadorContactos =()=>{
     localStorage.setItem('contactos',JSON.stringify(contacts))
 }
 
+//si el usuario existe le genero unos contactos por default
 user.username === user.username ? generadorContactos() : loggedUser.innerHTML=`Sesión no iniciada`;
 
 const refreshSite=()=>{
