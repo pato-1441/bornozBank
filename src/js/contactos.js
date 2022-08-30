@@ -59,7 +59,7 @@ const pintarContactos = () =>{
     contenedorContactos.innerHTML='';
     contacts.forEach(contacto => {
         const cloneTemplate = template.cloneNode(true);
-        cloneTemplate.querySelector('#contactoFullname').textContent = contacto.contactFullname;
+        cloneTemplate.getElementById('contactoFullname').textContent = contacto.contactFullname;
         fragment.appendChild(cloneTemplate);
     });
     contenedorContactos.appendChild(fragment);

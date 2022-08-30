@@ -3488,16 +3488,16 @@ body[dir="rtl"] .checkbox:checked,
   margin-bottom: 0.75rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mr-1 {
-  margin-right: 0.25rem;
 }
 
 .flex {
@@ -3562,16 +3562,16 @@ body[dir="rtl"] .checkbox:checked,
   width: 1.5rem;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .w-16 {
   width: 4rem;
 }
 
 .w-10\/12 {
   width: 83.333333%;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .w-12 {
@@ -3674,16 +3674,6 @@ body[dir="rtl"] .checkbox:checked,
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
@@ -3692,6 +3682,16 @@ body[dir="rtl"] .checkbox:checked,
 .bg-red-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 .bg-neutral-focus {
@@ -3806,6 +3806,11 @@ body[dir="rtl"] .checkbox:checked,
   line-height: 1.5rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -3814,11 +3819,6 @@ body[dir="rtl"] .checkbox:checked,
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 .font-light {
@@ -3899,11 +3899,6 @@ body[dir="rtl"] .checkbox:checked,
   border-color: rgb(74 222 128 / var(--tw-border-opacity));
 }
 
-.hover\:border-cyan-900:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(22 78 99 / var(--tw-border-opacity));
-}
-
 .hover\:border-blue-500:hover {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
@@ -3912,6 +3907,11 @@ body[dir="rtl"] .checkbox:checked,
 .hover\:border-red-600:hover {
   --tw-border-opacity: 1;
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
+}
+
+.hover\:border-cyan-900:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(22 78 99 / var(--tw-border-opacity));
 }
 
 .hover\:bg-cyan-900:hover {
@@ -3929,13 +3929,13 @@ body[dir="rtl"] .checkbox:checked,
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-inherit:hover {
+  background-color: inherit;
+}
+
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-inherit:hover {
-  background-color: inherit;
 }
 
 .hover\:text-white:hover {

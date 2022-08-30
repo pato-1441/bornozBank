@@ -26,13 +26,18 @@ class Contact{
     }
 }
 
+
 let contacts=[];
 const generadorID =()=>{return parseInt(Math.random()*100000)}
-contacts.push(new Contact(generadorID(),'Gerardo Kelly',parseInt('0002465832152469952001'),'gerardo.kelly'));
-contacts.push(new Contact(generadorID(),'Miriam Nancy',parseInt('0008965142452469952001'),'miriam.nancy'));
-contacts.push(new Contact(generadorID(),'Leonardo Fonseca',parseInt('0003412145782469952001'),'leo.basquet'));
-contacts.push(new Contact(generadorID(),'Jesus Garcia',parseInt('0006933356872469952001'),'maria.jesus'));
-localStorage.setItem('contactos',JSON.stringify(contacts))
+const generadorContactos =()=>{
+    contacts.push(new Contact(generadorID(),'Gerardo Kelly',parseInt('0002465832152469952001'),'gerardo.kelly'));
+    contacts.push(new Contact(generadorID(),'Miriam Nancy',parseInt('0008965142452469952001'),'miriam.nancy'));
+    contacts.push(new Contact(generadorID(),'Leonardo Fonseca',parseInt('0003412145782469952001'),'leo.basquet'));
+    contacts.push(new Contact(generadorID(),'Jesus Garcia',parseInt('0006933356872469952001'),'maria.jesus'));
+    localStorage.setItem('contactos',JSON.stringify(contacts))
+}
+
+user.username === user.username ? generadorContactos() : loggedUser.innerHTML=`Sesión no iniciada`;
 
 const refreshSite=()=>{
     window.location.href='./dashboard.html';
@@ -61,6 +66,64 @@ class MovimientoBancario{
 
 let movimientosARS = JSON.parse(localStorage.getItem('movimientosUsuarioARS'));
 let movimientosUSD = JSON.parse(localStorage.getItem('movimientosUsuarioUSD'));
+
+const generadorMovimientos=()=>{ 
+    const contenedorMovimientosARS = document.getElementById('contenedorMovimientosARS');
+    contenedorMovimientosARS.innerHTML=`<tr class="">
+                                            <td>
+                                                <div class="flex items-center space-x-3">
+                                                <div class="avatar placeholder mr-2">
+                                                    <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                                                    <span></span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="font-bold capitalize">Retiro</div>
+                                                    <div class="text-sm opacity-50">ID: 64425</div>
+                                                </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$0</span></td>
+                                            <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$5100</span></td>
+                                        </tr>
+                                        <tr class="">
+                                            <td>
+                                                <div class="flex items-center space-x-3">
+                                                <div class="avatar placeholder mr-2">
+                                                    <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                                                    <span></span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="font-bold capitalize">Deposito</div>
+                                                    <div class="text-sm opacity-50">ID: 12487</div>
+                                                </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$12450</span></td>
+                                            <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$0</span></td>
+                                        </tr>
+                                        <tr class="">
+                                            <td>
+                                                <div class="flex items-center space-x-3">
+                                                <div class="avatar placeholder mr-2">
+                                                    <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                                                    <span></span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="font-bold capitalize">Deposito</div>
+                                                    <div class="text-sm opacity-50">ID: 04875</div>
+                                                </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$2650</span></td>
+                                            <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$5</span></td>
+                                            </tr>
+                                            ` 
+}
+
+user.username === 'invitado' ? generadorMovimientos() : loggedUser.innerHTML=`Sesión no iniciada`;
 
 const retirarARS=()=>{
     let total = parseInt(JSON.parse(localStorage.getItem('usuarioBalanceARS')));

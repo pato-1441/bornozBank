@@ -32,9 +32,9 @@ users.push(new User('invitado','invitado@gmail.com','invitado','0','0',JSON.stri
 // REGISTRO DE USUARIOS
 
 const buttonRegister = document.getElementById("submitRegister");
-buttonRegister.addEventListener("click",registerUser);
+buttonRegister.addEventListener("click",()=>{registerUser()});
 
-function registerUser(){
+const registerUser=()=>{
     let formularioRegistro = document.getElementById("registerForm");
     const alertSuccess=document.getElementById("alertRegisterSuccess");
     const alertError=document.getElementById('alertRegisterError');
@@ -69,15 +69,15 @@ function registerUser(){
 const inputUsernameLogin = document.getElementById('inputUsernameLogin')
 const inputPasswordLogin = document.getElementById('inputPasswordLogin');
 const submitLogin = document.getElementById('submitLogin');
-submitLogin.addEventListener('click',validarLogin)
+submitLogin.addEventListener('click',()=>{validarLogin()})
 
 // Cargo datos default
 inputUsernameLogin.value='invitado';
 inputPasswordLogin.value='invitado';
 
-function validarLogin(){
+const validarLogin=()=>{
     if(inputUsernameLogin.value==='invitado'&&inputPasswordLogin.value==='invitado'){
-        let invitadoUser = new User(inputUsernameLogin.value,inputPasswordLogin.value,'invitado@mail.com',localStorage.setItem('usuarioBalanceARS',JSON.stringify('0')),localStorage.setItem('usuarioBalanceUSD',JSON.stringify('0')),localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosUSD)),localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD)));
+        let invitadoUser = new User(inputUsernameLogin.value,inputPasswordLogin.value,'invitado@mail.com',localStorage.setItem('usuarioBalanceARS',JSON.stringify('10000')),localStorage.setItem('usuarioBalanceUSD',JSON.stringify('10000')),localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosUSD)),localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD)));
         inputUsernameLogin.value='';
         inputPasswordLogin.value='';
         window.location.href='./dashboard.html';
