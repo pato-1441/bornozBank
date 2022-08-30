@@ -18,27 +18,20 @@ const logOut=()=>{
 
 // Contactos
 class Contact{
-    constructor(id, contactFullname,contactCBU,contactAlias){
+    constructor(id,contactFullname,contactCBU,contactAlias){
         this.id = id;
         this.contactFullname = contactFullname;
         this.contactCBU = contactCBU;
         this.contactAlias = contactAlias;
     }
-    updateContact(){
-        this.contactFullname = prompt('Ingrese el nombre completo nuevo:');
-        this.contactCBU = prompt('Ingrese el nuevo CBU de: '+ this.contactFullname);
-        this.contactAlias = prompt('Ingrese el nuevo Alias de: '+ this.contactFullname);
-    }
 }
 
 let contacts=[];
-const generarID=()=>{
-    return parseInt(Math.random()*1000);
-}
-contacts.push(new Contact(generarID(),'Gerardo Kelly',parseInt('0002465832152469952001'),'gerardo.kelly'));
-contacts.push(new Contact(generarID(),'Miriam Nancy',parseInt('0008965142452469952001'),'miriam.nancy'));
-contacts.push(new Contact(generarID(),'Leonardo Fonseca',parseInt('0003412145782469952001'),'leo.basquet'));
-contacts.push(new Contact(generarID(),'Jesus Garcia',parseInt('0006933356872469952001'),'maria.jesus'));
+const generadorID =()=>{return parseInt(Math.random()*100000)}
+contacts.push(new Contact(generadorID(),'Gerardo Kelly',parseInt('0002465832152469952001'),'gerardo.kelly'));
+contacts.push(new Contact(generadorID(),'Miriam Nancy',parseInt('0008965142452469952001'),'miriam.nancy'));
+contacts.push(new Contact(generadorID(),'Leonardo Fonseca',parseInt('0003412145782469952001'),'leo.basquet'));
+contacts.push(new Contact(generadorID(),'Jesus Garcia',parseInt('0006933356872469952001'),'maria.jesus'));
 localStorage.setItem('contactos',JSON.stringify(contacts))
 
 const refreshSite=()=>{
