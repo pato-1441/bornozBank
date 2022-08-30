@@ -52,15 +52,20 @@ const crearContacto = e => {
         pintarContactos();        
         return  
     }    
-
+    
 }
 
 const pintarContactos = () =>{
+    contenedorContactos.innerHTML='';
     contacts.forEach(contacto => {
-        console.log(contacto);
+        const cloneTemplate = template.cloneNode(true);
+        cloneTemplate.querySelector('#contactoFullname').textContent = contacto.contactFullname;
+        fragment.appendChild(cloneTemplate);
     });
+    contenedorContactos.appendChild(fragment);
 }
 
+pintarContactos();
 
 /*
 const cargarContactos=()=>{
