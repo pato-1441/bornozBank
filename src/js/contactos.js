@@ -166,6 +166,7 @@ const pintarContactos=()=>{
                                 <!--termina modal editar contactos-->`;
         fragmentContacto.appendChild(contactoDiv);
         contenedorContactos.appendChild(fragmentContacto);
+        
     });
 }
 
