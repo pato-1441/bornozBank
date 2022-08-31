@@ -48,9 +48,21 @@ const crearContacto = e => {
         contacts.push(nuevoContacto)
         localStorage.setItem('contactos',JSON.stringify(contacts))
         addContactForm.reset();
+        alertAddContactError.classList.add('hidden');
+        alertAddContactSuccess.classList.remove('hidden');
+        setTimeout(function(){
+            alertAddContactSuccess.classList.add('hidden');
+            //window.location.href='./contactos.html';
+        }, 5000); 
         pintarContactos();        
         return  
-    }    
+    } else {
+        // agrego timeout para que se borre la alerta de error
+        alertAddContactError.classList.remove('hidden')
+        setTimeout(function(){
+            alertAddContactError.classList.add('hidden');
+        }, 7500);    
+    }
     
 }
 
@@ -154,14 +166,6 @@ const pintarContactos = () =>{
 addEventListener('DOMContentLoaded',()=>{pintarContactos()})
 
 /*
-const cargarContactos=()=>{
-    let contenedorContactos = document.getElementById('contenedorContactos');
-    let contador=0;
-    contacts.forEach(contacto => {    
-        contador++;
-        contenedorContactos.innerHTML+=`
-                                        `
-    });  
     let contadorDos = 0;
     contacts.forEach(contacto => {
         contadorDos++;
@@ -169,42 +173,6 @@ const cargarContactos=()=>{
         boton.addEventListener('click',()=>removeContact(contacto.id))
     });
 }
-
-cargarContactos();
-
-
-submitAddContact.addEventListener('click',()=>{newContact()});
-
-const newContact=()=>{
-    const addContactForm = document.getElementById('addContactForm');
-    const alertAddContactSuccess = document.getElementById('alertAddContactSuccess');
-    const alertAddContactError = document.getElementById('alertAddContactError');
-
-    //Si los campos están completos
-    if(addContactForm.children[1].value!==''&&addContactForm.children[3].value!==''&&addContactForm.children[5].value!==''){
-        let nuevoContacto = new Contact(inputNameAddContact.value,parseInt(inputCBUAddContact.value),inputAliasAddContact.value);
-        contacts.push(nuevoContacto);
-        localStorage.setItem('contactos',JSON.stringify(contacts))
-        inputNameAddContact.value = '';
-        inputCBUAddContact.value = '';
-        inputAliasAddContact.value = '';
-        cargarContactos();
-        alertAddContactError.classList.add('hidden');
-        alertAddContactSuccess.classList.remove('hidden');
-        setTimeout(function(){
-            alertAddContactSuccess.classList.add('hidden');
-            //window.location.href='./contactos.html';
-        }, 5000); 
-    } else {
-        // agrego timeout para que se borre la alerta de error
-        alertAddContactError.classList.remove('hidden')
-        setTimeout(function(){
-            alertAddContactError.classList.add('hidden');
-        }, 7500);        
-    }
-}
-//
-
 
 const removeContact=(id)=>{
     debugger
