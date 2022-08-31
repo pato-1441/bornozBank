@@ -28,7 +28,7 @@ const inputAliasAddContact = document.getElementById('inputAliasAddContact');
 const submitAddContact = document.getElementById('submitAddContact');
 const contenedorContactos = document.getElementById('contenedorContactos');
 const fragment = document.createDocumentFragment();
-let contacts = JSON.parse(localStorage.getItem('contactos'));
+const contacts = JSON.parse(localStorage.getItem('contactos'));
 
 addContactForm.addEventListener('submit',e =>{
     e.preventDefault();
@@ -148,9 +148,7 @@ const pintarContactos = () =>{
                                             </label>
                                         </label>
                                         <!--termina modal añadir contactos-->`
-        //fragment.appendChild();
     });
-    contenedorContactos.appendChild(fragment);
 }
 
 addEventListener('DOMContentLoaded',()=>{pintarContactos()})

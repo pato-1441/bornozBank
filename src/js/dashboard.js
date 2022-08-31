@@ -26,19 +26,8 @@ class Contact{
     }
 }
 
-
-let contacts=[];
-const generadorID =()=>{return parseInt(Math.random()*100000)}
-const generadorContactos =()=>{
-    contacts.push(new Contact(generadorID(),'Gerardo Kelly',parseInt('0002465832152469952001'),'gerardo.kelly'));
-    contacts.push(new Contact(generadorID(),'Miriam Nancy',parseInt('0008965142452469952001'),'miriam.nancy'));
-    contacts.push(new Contact(generadorID(),'Leonardo Fonseca',parseInt('0003412145782469952001'),'leo.basquet'));
-    contacts.push(new Contact(generadorID(),'Jesus Garcia',parseInt('0006933356872469952001'),'maria.jesus'));
-    localStorage.setItem('contactos',JSON.stringify(contacts))
-}
-
 //si el usuario existe le genero unos contactos por default
-user.username === user.username ? generadorContactos() : loggedUser.innerHTML=`Sesión no iniciada`;
+//user.username === user.username ? generadorContactos() : loggedUser.innerHTML=`Sesión no iniciada`;
 
 const refreshSite=()=>{
     window.location.href='./dashboard.html';
