@@ -35,12 +35,8 @@ addContactForm.addEventListener('submit',e =>{
     crearContacto(e);
 })
 
-const crearContacto = e => {
-    const validacionAddComplete = (inputNameAddContact.value!==''&&
-                                (inputCBUAddContact.value!==''&&inputCBUAddContact.value.length==22)&&
-                                inputAliasAddContact.value!=='')
-    if (validacionAddComplete) {
-        const generadorID =()=>{return parseInt(Math.random()*100000)}
+const creacionContacto=()=>{
+    const generadorID =()=>{return parseInt(Math.random()*100000)}
         let nuevoContacto = new Contact(generadorID(),
                                         inputNameAddContact.value,
                                         parseInt(inputCBUAddContact.value),
@@ -56,14 +52,21 @@ const crearContacto = e => {
         }, 5000); 
         pintarContactos();        
         return  
-    } else {
-        // agrego timeout para que se borre la alerta de error
-        alertAddContactError.classList.remove('hidden')
-        setTimeout(function(){
-            alertAddContactError.classList.add('hidden');
-        }, 7500);    
-    }
-    
+}
+
+const creacionContactoError=()=>{
+    // agrego timeout para que se borre la alerta de error
+    alertAddContactError.classList.remove('hidden')
+    setTimeout(function(){
+        alertAddContactError.classList.add('hidden');
+    }, 7500);    
+}
+
+const crearContacto = e => {
+    const validacionAddComplete = (inputNameAddContact.value!==''&&
+                                (inputCBUAddContact.value!==''&&inputCBUAddContact.value.length==22)&&
+                                inputAliasAddContact.value!=='')
+    validacionAddComplete ? creacionContacto() : creacionContactoError();    
 }
 
 const pintarContactos = () =>{
