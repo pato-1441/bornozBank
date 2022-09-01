@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/2a09230c59.js" crossorigin="anonymous"></script>
     <script defer src="./js/contactos.js"></script>
     <link rel="shortcut icon" href="../src/assets/logo.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-to-b from-green-400 to-cyan-900 h-screen">
@@ -59,7 +60,7 @@
     </header>
     <main>
         <!--arranca contactos-->
-        <section class="container-fluid mx-auto mt-10 mb-10 p-10 w-11/12 sm:w-6/12 h-fit bg-white rounded-box text-black">
+        <section class="container-fluid mx-auto mt-10 mb-10 p-10 w-11/12 sm:w-6/12 h-fit bg-white rounded-box text-black"  data-aos="fade-up" data-aos-delay="150" data-aos-duration="600">
             <div class="flex justify-between mb-4">
                 <h2 class="text-2xl mb-4 ">Contactos</h2>
                 <label for="my-modal-0"
@@ -144,5 +145,9 @@
             <!--termina contactos-->
         </section>
     </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

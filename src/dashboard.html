@@ -9,6 +9,7 @@
   <script defer src="https://kit.fontawesome.com/2a09230c59.js" crossorigin="anonymous"></script>
   <script defer src="./js/dashboard.js"></script>
   <link rel="shortcut icon" href="../src/assets/logo.png" type="image/x-icon">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-to-b from-green-400 to-cyan-900 h-screen">
@@ -32,7 +33,7 @@
         <a rel="noopener noreferrer" class="btn btn-ghost normal-case text-xl hidden sm:flex "><img class="flex w-10"
           src="./assets/logo-blanco.png" alt="logo de Bornoz Bank"></a>
       </div>
-      <div class="navbar-center hidden lg:flex justify-center align-middle">
+      <div class="navbar-center hidden lg:flex justify-center align-middle" data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">
         <ul class="menu menu-horizontal p-0 font-light text-black bg-white rounded-box shadow-lg">
           <li><a href="./dashboard.html" rel="noopener noreferrer" class="active:bg-cyan-900">Home</a></li>
           <li><a href="./contactos.html" rel="noopener noreferrer" class="active:bg-cyan-900">Contactos</a></li>
@@ -210,6 +211,10 @@
     </section>
     <!--termina dashboard-->
   </main>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+      AOS.init();
+  </script>
 </body>
 
 </html>
