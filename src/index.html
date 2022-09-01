@@ -9,6 +9,7 @@
   <script src="https://kit.fontawesome.com/2a09230c59.js" crossorigin="anonymous"></script>
   <script defer src="../src/js/app.js"></script>
   <link rel="shortcut icon" href="../src/assets/logo.png" type="image/x-icon">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-to-b from-green-400 to-cyan-900">
@@ -93,7 +94,7 @@
       <!--termina navbar end-->
     </div>
   </header>
-  <main class="container-fluid h-screen">
+  <main class="container-fluid h-screen" data-aos="fade-up" data-aos-delay="150" data-aos-duration="600">
     <!--arranca login-->
     <section class="mt-10">
       <div id="welcome-card" class="bg-white text-black w-10/12 sm:w-8/12 md:w-6/12 mx-auto rounded-box shadow-lg pb-12">
@@ -140,6 +141,10 @@
     </section>
     <!--termina login usuario-->
   </main>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
