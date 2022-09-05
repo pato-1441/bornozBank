@@ -37,8 +37,8 @@ addContactForm.addEventListener('submit',e =>{
 
 const crearContacto = e => {
     const validacionAddComplete = (inputNameAddContact.value!==''&&
-    (inputCBUAddContact.value!==''&&inputCBUAddContact.value!=='')&&
-    inputAliasAddContact.value!=='')
+                                   inputCBUAddContact.value!==''&&
+                                   inputAliasAddContact.value!=='')
     validacionAddComplete ? creacionContacto() : creacionContactoError();    
 }
 
@@ -85,9 +85,9 @@ const pintarContactos=()=>{
                                 <label for="my-modal-${contador}" class="modal cursor-pointer">
                                     <label class="modal-box relative w-11/12 sm:w-8/12 h-fit max-w-5xl bg-white text-black flex flex-col" for="my-modal-${contador}" id="cuerpo-my-modal-${contador}">
                                         <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">Editar contacto</h2>
-                                        <div class="form flex flex-col items-center">
+                                        <form class="form flex flex-col items-center editContactForm">
                                         <!--arranca editar contacto-->
-                                            <div class="form-control w-full max-w-xs mx-auto pt-4 pb-4" id="editContactForm">
+                                            <div class="form-control w-full max-w-xs mx-auto pt-4 pb-4">
                                         <!--arranca nombre contacto-->
                                             <label class="label">
                                                 <span class="label-text text-base text-black">Nombre Completo</span>
@@ -123,8 +123,12 @@ const pintarContactos=()=>{
                                         <!--termina alias contacto-->
                                         <!--boton editar contacto-->
                                             <div class="mt-4 flex mx-auto">
-                                                <button type="submit"
-                                                    class="btn btn-outline w-1/2 mr-1 text-white hover:text-blue-500 hover:border-blue-500 hover:bg-inherit bg-blue-500 mb-3 submitEditContact">Guardar cambios
+                                                <button 
+                                                    type="submit"
+                                                    class="btn btn-outline w-1/2 mr-1 text-white hover:text-blue-500 hover:border-blue-500 hover:bg-inherit bg-blue-500 mb-3 submitEditContact"
+                                                    id="${contacto.id}"
+                                                >
+                                                    Guardar cambios
                                                 </button>
                                                 <button 
                                                     type="submit"
@@ -162,7 +166,7 @@ const pintarContactos=()=>{
                                                 <!--termina error en editar contacto-->
                                             </div>
                                             <!--termina form interno-->
-                                        </div>
+                                        </form>
                                         <!--termina form contacto-->
                                     </label>
                                 </label>
@@ -170,6 +174,10 @@ const pintarContactos=()=>{
         fragmentContacto.appendChild(contactoDiv);
         contenedorContactos.appendChild(fragmentContacto); 
     });
+    const submitEditContactButton = document.querySelectorAll('.submitEditContact');
+    submitEditContactButton.forEach(btn=>{
+        btn.addEventListener('click',()=>{editContact(btn.id)})
+    })
     const submitDeleteContactButton = document.querySelectorAll('.submitDeleteContact');
     submitDeleteContactButton.forEach(btn=>{
         btn.addEventListener('click',()=>{removeContact(btn.id)})
@@ -178,7 +186,49 @@ const pintarContactos=()=>{
 
 addEventListener('DOMContentLoaded',()=>{pintarContactos()})
 
+//Editar contacto
+const editContactForm = document.querySelectorAll('.editContactForm');
+editContactForm.forEach(form=>{
+    form.addEventListener('submit',e=>{
+        e.preventDefault();
+        editContact(e);
+    })
+})
 
+const editContact = e => {
+    const alertEditContactSuccess = document.getElementById('alertEditContactSuccess');
+    const alertEditContactError = document.getElementById('alertEditContactError');
+    const inputNameEditContact = document.getElementById('inputNameEditContact');
+    const inputCBUEditContact = document.getElementById('inputCBUEditContact');
+    const inputAliasEditContact = document.getElementById('inputAliasEditContact');
+
+    const validacionEditComplete = (inputNameEditContact.value!==''&&
+                                    inputCBUEditContact.value!==''&&
+                                    inputAliasEditContact.value!=='')
+    validacionEditComplete ? edicionContacto() : edicionContactoError();    
+}
+
+const edicionContacto=(id)=>{
+    alertEditContactError.classList.add('hidden');
+    alertEditContactSuccess.classList.remove('hidden');
+    setTimeout(function(){
+        alertEditContactSuccess.classList.add('hidden');
+        //window.location.href='./contactos.html';
+    }, 5000); 
+    pintarContactos();        
+    return  
+}
+
+const edicionContactoError=()=>{
+    // agrego timeout para que se borre la alerta de error
+    alertEditContactError.classList.remove('hidden')
+    setTimeout(function(){
+        alertEditContactError.classList.add('hidden');
+    }, 7500);    
+}
+
+
+//Eliminar contacto
 const removeContact=(id)=>{
     //let botonEliminar = document.querySelectorAll('.submitDeleteContact');
     contactos = contacts.filter(contacto => contacto.id !== (parseInt(id)));
@@ -186,51 +236,3 @@ const removeContact=(id)=>{
     pintarContactos();
     window.location.href='./contactos.html';
 }
-
-/*
-    let contadorDos = 0;
-    contacts.forEach(contacto => {
-        contadorDos++;
-        const boton = document.getElementById(`submitDeleteContact${contadorDos}`)
-        boton.addEventListener('click',()=>removeContact(contacto.id))
-    });
-}
-
-//Editar contacto
-const inputNameEditContact = document.getElementById('inputNameEditContact');
-const inputCBUEditContact = document.getElementById('inputCBUEditContact');
-const inputAliasEditContact = document.getElementById('inputAliasEditContact');
-const submitEditContact = document.getElementById('submitEditContact');
-const submitDeleteContact = document.getElementById('submitDeleteContact');
-//submitDeleteContact.addEventListener('click',deleteContact);
-
-const editContact=()=>{
-    const editContactForm = document.getElementById('editContactForm');
-    const alertEditContactSuccess = document.getElementById('alertEditContactSuccess');
-    const alertEditContactError = document.getElementById('alertEditContactError');
-
-    // Si los campos estan completos
-    if(editContactForm.children[1].value!==''&&editContactForm.children[4].value!==''&&editContactForm.children[7].value!==''){
-        let nuevoContacto = new Contact(inputNameAddContact.value,parseInt(inputCBUAddContact.value),inputAliasAddContact.value);
-        contacts.push(nuevoContacto);
-        localStorage.setItem('contactos',JSON.stringify(contacts))
-        inputNameEditContact.value = '';
-        inputCBUEditContact.value = '';
-        inputAliasEditContact.value = '';
-        alertEditContactError.classList.add('hidden');
-        alertEditContactSuccess.classList.remove('hidden');
-        setTimeout(function(){
-            alertEditContactSuccess.classList.add('hidden');
-            //window.location.href='./contactos.html';
-        }, 5000); 
-    } else {
-        // agrego timeout para que se borre la alerta de error
-        alertEditContactError.classList.remove('hidden')
-        setTimeout(function(){
-            alertEditContactError.classList.add('hidden');
-        }, 7500);        
-    }
-}
-// Fin Contactos
-
-*/
