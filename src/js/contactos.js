@@ -126,9 +126,12 @@ const pintarContactos=()=>{
                                                 <button type="submit"
                                                     class="btn btn-outline w-1/2 mr-1 text-white hover:text-blue-500 hover:border-blue-500 hover:bg-inherit bg-blue-500 mb-3 submitEditContact">Guardar cambios
                                                 </button>
-                                                <button type="submit"
-                                                    class="btn btn-outline w-1/2 text-white hover:text-red-600 hover:border-red-600 hover:bg-inherit bg-red-600 mb-3 submitDeleteContact">Eliminar
-                                                    contacto
+                                                <button 
+                                                    type="submit"
+                                                    class="btn btn-outline w-1/2 text-white hover:text-red-600 hover:border-red-600 hover:bg-inherit bg-red-600 mb-3 submitDeleteContact"
+                                                    id="${contacto.id}"
+                                                >
+                                                    Eliminar contacto
                                                 </button>
                                             </div>
                                         <!--termina editar contacto-->
@@ -165,9 +168,12 @@ const pintarContactos=()=>{
                                 </label>
                                 <!--termina modal editar contactos-->`;
         fragmentContacto.appendChild(contactoDiv);
-        contenedorContactos.appendChild(fragmentContacto);
-        
+        contenedorContactos.appendChild(fragmentContacto); 
     });
+    const submitDeleteContactButton = document.querySelectorAll('.submitDeleteContact');
+    submitDeleteContactButton.forEach(btn=>{
+        btn.addEventListener('click',()=>{removeContact(btn.id)})
+    })
 }
 
 addEventListener('DOMContentLoaded',()=>{pintarContactos()})
