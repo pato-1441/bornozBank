@@ -46,7 +46,7 @@ const creacionContacto=()=>{
     const generadorID =()=>{return parseInt(Math.random()*100000)}
     let nuevoContacto = new Contact(generadorID(),
                                     inputNameAddContact.value,
-                                    parseInt(inputCBUAddContact.value),
+                                    inputCBUAddContact.value,
                                     inputAliasAddContact.value)
     contacts.push(nuevoContacto)
     localStorage.setItem('contactos',JSON.stringify(contacts))
@@ -178,6 +178,7 @@ const removeContact=(id)=>{
     contactos = contacts.filter(contacto => contacto.id !== (parseInt(id)));
     localStorage.setItem('contactos',JSON.stringify(contactos));
     pintarContactos();
+    window.location.href='./contactos.html';
 }
 
 /*
