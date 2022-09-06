@@ -85,9 +85,9 @@ const pintarContactos=()=>{
                                 <label for="my-modal-${contador}" class="modal cursor-pointer">
                                     <label class="modal-box relative w-11/12 sm:w-8/12 h-fit max-w-5xl bg-white text-black flex flex-col" for="my-modal-${contador}" id="cuerpo-my-modal-${contador}">
                                         <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">Editar contacto</h2>
-                                        <form class="form flex flex-col items-center editContactForm">
+                                        <div class="form flex flex-col items-center">
                                         <!--arranca editar contacto-->
-                                            <div class="form-control w-full max-w-xs mx-auto pt-4 pb-4">
+                                            <form class="form-control w-full max-w-xs mx-auto pt-4 pb-4 editContactForm">
                                         <!--arranca nombre contacto-->
                                             <label class="label">
                                                 <span class="label-text text-base text-black">Nombre Completo</span>
@@ -164,9 +164,9 @@ const pintarContactos=()=>{
                                                     </div>
                                                 </div>
                                                 <!--termina error en editar contacto-->
-                                            </div>
+                                            </form>
                                             <!--termina form interno-->
-                                        </form>
+                                        </div>
                                         <!--termina form contacto-->
                                     </label>
                                 </label>
@@ -174,10 +174,10 @@ const pintarContactos=()=>{
         fragmentContacto.appendChild(contactoDiv);
         contenedorContactos.appendChild(fragmentContacto); 
     });
-    const submitEditContactButton = document.querySelectorAll('.submitEditContact');
+    /*const submitEditContactButton = document.querySelectorAll('.submitEditContact');
     submitEditContactButton.forEach(btn=>{
         btn.addEventListener('click',()=>{editContact(btn.id)})
-    })
+    })*/
     const submitDeleteContactButton = document.querySelectorAll('.submitDeleteContact');
     submitDeleteContactButton.forEach(btn=>{
         btn.addEventListener('click',()=>{removeContact(btn.id)})
@@ -187,46 +187,6 @@ const pintarContactos=()=>{
 addEventListener('DOMContentLoaded',()=>{pintarContactos()})
 
 //Editar contacto
-const editContactForm = document.querySelectorAll('.editContactForm');
-editContactForm.forEach(form=>{
-    form.addEventListener('submit',e=>{
-        e.preventDefault();
-        editContact(e);
-    })
-})
-
-const editContact = e => {
-    const alertEditContactSuccess = document.getElementById('alertEditContactSuccess');
-    const alertEditContactError = document.getElementById('alertEditContactError');
-    const inputNameEditContact = document.getElementById('inputNameEditContact');
-    const inputCBUEditContact = document.getElementById('inputCBUEditContact');
-    const inputAliasEditContact = document.getElementById('inputAliasEditContact');
-
-    const validacionEditComplete = (inputNameEditContact.value!==''&&
-                                    inputCBUEditContact.value!==''&&
-                                    inputAliasEditContact.value!=='')
-    validacionEditComplete ? edicionContacto() : edicionContactoError();    
-}
-
-const edicionContacto=(id)=>{
-    alertEditContactError.classList.add('hidden');
-    alertEditContactSuccess.classList.remove('hidden');
-    setTimeout(function(){
-        alertEditContactSuccess.classList.add('hidden');
-        //window.location.href='./contactos.html';
-    }, 5000); 
-    pintarContactos();        
-    return  
-}
-
-const edicionContactoError=()=>{
-    // agrego timeout para que se borre la alerta de error
-    alertEditContactError.classList.remove('hidden')
-    setTimeout(function(){
-        alertEditContactError.classList.add('hidden');
-    }, 7500);    
-}
-
 
 //Eliminar contacto
 const removeContact=(id)=>{
