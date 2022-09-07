@@ -58,12 +58,16 @@
         </header>
         <main>
             <section class="container-fluid mx-auto mt-10 mb-10 p-10 w-11/12 sm:w-10/12 h-fit bg-white rounded-box text-black" data-aos="fade-up" data-aos-delay="150" data-aos-duration="600">
-                <div class="mt-4">
-                    <p class="text-2xl">Cotizaciones</p>
+                <div class=""><p class="text-2xl">Cotizaciones</p></div>
+
+                <div id="loader">
+                    <div class="mt-4 flex justify-center">
+                        <button class="btn loading rounded-box text-black text-xl bg-inherit border-none">cargando</button>
+                    </div>
                 </div>
-                <div class="mt-4 text-center bg-gray-100 p-4 rounded-box hidden" id="contenedorCotizacionesError">
-                </div>
+
                 <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-4" id="contenedorCotizaciones">
+
                 </div>
             </section>
         </main>
