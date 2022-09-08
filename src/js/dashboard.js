@@ -257,7 +257,7 @@ const muestroMovimientos=()=>{
                                 </div>
                                 <div>
                                     <div class="font-bold capitalize">${movimiento.movimiento}</div>
-                                    <div class="text-sm opacity-50">ID: ${movimiento.fecha}</div>
+                                    <div class="text-sm opacity-50">${movimiento.fecha}</div>
                                 </div>
                                 </div>
                             </td>
