@@ -137,7 +137,7 @@ const retirarUSD=()=>{
     debugger
     let total = parseInt(JSON.parse(localStorage.getItem('usuarioBalanceUSD')));
     let generadorID = parseInt(Math.random()*1000);
-    if(inputRetirarUSDConfirmar.value>0&&inputRetirarUSDConfirmar.value<=usuarioBalanceUSD){
+    if(inputRetirarUSDConfirmar.value>0&&inputRetirarUSDConfirmar.value<=parseInt(usuarioBalanceUSD)){
         let balanceUSDRetirado = (parseInt(inputRetirarUSDConfirmar.value));
         total = total-balanceUSDRetirado;
         fechaFormateo= new Date();
@@ -226,44 +226,89 @@ let movimientoUSD = JSON.parse(localStorage.getItem('movimientosUsuarioUSD'));
 const muestroMovimientos=()=>{
     movimientosARS.reverse();
     movimientosARS.forEach(movimiento => {
-        contenedorMovimientosARS.innerHTML+=`<tr class="">
-                            <td>
-                                <div class="flex items-center space-x-3">
-                                <div class="avatar placeholder mr-2">
-                                    <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                                    <span></span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="font-bold capitalize">${movimiento.movimiento}</div>
-                                    <div class="text-sm opacity-50">${movimiento.fecha}</div>
-                                </div>
-                                </div>
-                            </td>
-                            <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$${movimiento.haber}</span></td>
-                            <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$${movimiento.debe}</span></td>
-                        </tr>` 
+        //si es retiro
+        if(movimiento.haber===0){
+            contenedorMovimientosARS.innerHTML+=`<tr class="">
+                                                    <td>
+                                                        <div class="flex items-center space-x-3">
+                                                        <div class="avatar placeholder mr-2">
+                                                            <div class="bg-red-600 text-neutral-content rounded-full w-12">
+                                                            <span>
+                                                                <i class="fa-solid fa-receipt fa-lg text-white"></i>
+                                                            </span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-bold capitalize">${movimiento.movimiento}</div>
+                                                            <div class="text-sm opacity-50">${movimiento.fecha}</div>
+                                                        </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$${movimiento.debe}</span></td>
+                                                </tr>` 
+        }else if (movimiento.haber!==0){
+            contenedorMovimientosARS.innerHTML+=`<tr class="">
+                                                    <td>
+                                                        <div class="flex items-center space-x-3">
+                                                        <div class="avatar placeholder mr-2">
+                                                            <div class="bg-green-500 text-neutral-content rounded-full w-12">
+                                                            <span>
+                                                                <i class="fa-solid fa-money-bill-transfer fa-lg text-white"></i>
+                                                            </span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-bold capitalize">${movimiento.movimiento}</div>
+                                                            <div class="text-sm opacity-50">${movimiento.fecha}</div>
+                                                        </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$${movimiento.haber}</span></td>
+                                                </tr>` 
+        }
     });
     // dolares
     movimientosUSD.reverse();
     movimientosUSD.forEach(movimiento => {
-        contenedorMovimientosUSD.innerHTML+=`<tr class="">
-                            <td>
-                                <div class="flex items-center space-x-3">
-                                <div class="avatar placeholder mr-2">
-                                    <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                                    <span></span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="font-bold capitalize">${movimiento.movimiento}</div>
-                                    <div class="text-sm opacity-50">${movimiento.fecha}</div>
-                                </div>
-                                </div>
-                            </td>
-                            <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$${movimiento.haber}</span></td>
-                            <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$${movimiento.debe}</span></td>
-                        </tr>` 
+        if(movimiento.haber===0){
+            contenedorMovimientosUSD.innerHTML+=`<tr class="">
+                                                    <td>
+                                                        <div class="flex items-center space-x-3">
+                                                        <div class="avatar placeholder mr-2">
+                                                            <div class="bg-red-600 text-neutral-content rounded-full w-12">
+                                                            <span>
+                                                                <i class="fa-solid fa-receipt fa-lg text-white"></i>
+                                                            </span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-bold capitalize">${movimiento.movimiento}</div>
+                                                            <div class="text-sm opacity-50">${movimiento.fecha}</div>
+                                                        </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><span class="text-white bg-red-600 rounded-box px-2 py-0.5 font-semibold">-$${movimiento.debe}</span></td>
+                                                </tr>` 
+        }else if (movimiento.haber!==0){
+            contenedorMovimientosUSD.innerHTML+=`<tr class="">
+                                                    <td>
+                                                        <div class="flex items-center space-x-3">
+                                                        <div class="avatar placeholder mr-2">
+                                                            <div class="bg-green-500 text-neutral-content rounded-full w-12">
+                                                            <span>
+                                                                <i class="fa-solid fa-money-bill-transfer fa-lg text-white"></i>
+                                                            </span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-bold capitalize">${movimiento.movimiento}</div>
+                                                            <div class="text-sm opacity-50">${movimiento.fecha}</div>
+                                                        </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><span class="text-white bg-green-500 rounded-box px-2 py-0.5 font-semibold">+$${movimiento.haber}</span></td>
+                                                </tr>` 
+        }
     });
 };
 muestroMovimientos();
