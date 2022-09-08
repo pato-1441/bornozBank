@@ -1,3 +1,16 @@
+
+// Log Out
+const btnLogOut = document.getElementById('btnLogOut');
+btnLogOut.addEventListener('click',()=>{logOut()});
+
+const logOut=()=>{
+    //Elimino el localStorage antes de irme
+    //localStorage.removeItem('usuario');
+    localStorage.clear();
+    window.location.href='./index.html';
+}
+
+
 const contenedorCotizaciones = document.getElementById('contenedorCotizaciones');
 const loader = document.getElementById('loader');
 const URLS=[];
