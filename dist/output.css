@@ -1966,6 +1966,34 @@ html {
   opacity: 1;
 }
 
+.footer {
+  display: grid;
+  width: 100%;
+  grid-auto-flow: row;
+  place-items: start;
+  row-gap: 2.5rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.footer > * {
+  display: grid;
+  place-items: start;
+  gap: 0.5rem;
+}
+
+@media (min-width: 48rem) {
+  .footer {
+    grid-auto-flow: column;
+  }
+
+  .footer-center {
+    grid-auto-flow: row dense;
+  }
+}
+
 .form-control {
   display: flex;
   flex-direction: column;
@@ -3550,6 +3578,18 @@ body[dir="rtl"] .checkbox:checked,
   height: 2rem;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
 .w-5 {
   width: 1.25rem;
 }
@@ -3678,6 +3718,18 @@ body[dir="rtl"] .checkbox:checked,
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-4 {
+  border-width: 4px;
 }
 
 .border-none {
@@ -3837,6 +3889,10 @@ body[dir="rtl"] .checkbox:checked,
   padding-top: 2rem;
 }
 
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -3967,6 +4023,10 @@ body[dir="rtl"] .checkbox:checked,
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.hover\:border-none:hover {
+  border-style: none;
+}
+
 .hover\:border-green-400:hover {
   --tw-border-opacity: 1;
   border-color: rgb(74 222 128 / var(--tw-border-opacity));
@@ -3980,6 +4040,10 @@ body[dir="rtl"] .checkbox:checked,
 .hover\:border-red-600:hover {
   --tw-border-opacity: 1;
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
+}
+
+.hover\:border-inherit:hover {
+  border-color: inherit;
 }
 
 .hover\:bg-red-600:hover {
@@ -4021,6 +4085,16 @@ body[dir="rtl"] .checkbox:checked,
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
+.hover\:text-green-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-text-opacity));
+}
+
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .focus\:bg-white:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -4048,6 +4122,10 @@ body[dir="rtl"] .checkbox:checked,
 
   .sm\:flex {
     display: flex;
+  }
+
+  .sm\:h-screen {
+    height: 100vh;
   }
 
   .sm\:w-6\/12 {

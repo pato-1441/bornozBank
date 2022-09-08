@@ -134,7 +134,6 @@ const btnRetirarUSDConfirmar = document.getElementById('btnRetirarUSDConfirmar')
 btnRetirarUSDConfirmar.addEventListener('click',()=>{retirarUSD()});
 
 const retirarUSD=()=>{
-    debugger
     let total = parseInt(JSON.parse(localStorage.getItem('usuarioBalanceUSD')));
     let generadorID = parseInt(Math.random()*1000);
     if(inputRetirarUSDConfirmar.value>0&&inputRetirarUSDConfirmar.value<=parseInt(usuarioBalanceUSD)){

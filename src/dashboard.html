@@ -12,7 +12,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-b from-green-400 to-cyan-900 h-screen">
+<body class="bg-gradient-to-b from-green-400 to-cyan-900 h-auto sm:h-screen">
   <header>
     <div class="navbar text-white pt-7 px-10">
       <div class="navbar-start">
@@ -63,7 +63,7 @@
   </header>
   <main>
     <!--arranca dashboard-->
-    <section id="dashboard" class="container-fluid mx-auto mt-10 mb-10 p-10 w-11/12 h-fit bg-white rounded-box">
+    <section id="dashboard" class="container-fluid mx-auto mt-10 p-10 w-11/12 h-fit bg-white rounded-box">
       <div class="grid grid-cols-4 grid-rows-12 gap-12">
         <!--balances-->
         <!--texto bienvenida-->
@@ -79,7 +79,7 @@
             <div class="stat-value">ARS $<span id="balanceARSTxt"></span></div>
             <div class="stat-actions">
               <!-- abro modal retirar ARS-->
-              <label for="my-modal-4" class="btn btn-sm modal-button text-white" id="btnRetirarARS">Retirar</label>
+              <label for="my-modal-4" class="btn btn-sm modal-button text-white hover:bg-red-600 hover:border-inherit" id="btnRetirarARS">Retirar</label>
               <input type="checkbox" id="my-modal-4" class="modal-toggle" />
               <label for="my-modal-4" class="modal cursor-pointer">
                 <label class="modal-box relative bg-white" for="">
@@ -105,7 +105,7 @@
               </label>
               <!-- cierro modal retirar ARS-->
               <!-- abro modal depositar ARS-->
-              <label for="my-modal-5" class="btn btn-sm modal-button text-white" id="btnDepositarARS">Depositar</label>
+              <label for="my-modal-5" class="btn btn-sm modal-button bg-inherit hover:border-green-400 hover:text-white text-black hover:bg-green-400" id="btnDepositarARS">Depositar</label>
               <input type="checkbox" id="my-modal-5" class="modal-toggle" />
               <label for="my-modal-5" class="modal cursor-pointer">
                 <label class="modal-box relative bg-white" for="">
@@ -136,7 +136,7 @@
             <div class="stat-value">USD $<span id="balanceUSDTxt"></span></div>
             <div class="stat-actions">
               <!-- abro modal retirar USD-->
-              <label for="my-modal-6" class="btn btn-sm modal-button text-white" id="btnRetirarUSD">Retirar</label>
+              <label for="my-modal-6" class="btn btn-sm modal-button text-white hover:bg-red-600 hover:border-inherit" id="btnRetirarUSD">Retirar</label>
               <input type="checkbox" id="my-modal-6" class="modal-toggle" />
               <label for="my-modal-6" class="modal cursor-pointer">
                 <label class="modal-box relative bg-white" for="">
@@ -162,7 +162,7 @@
               </label>
               <!-- cierro modal retirar USD-->
               <!-- abro modal depositar USD-->
-              <label for="my-modal-7" class="btn btn-sm modal-button text-white" id="btnDepositarUSD">Depositar</label>
+              <label for="my-modal-7" class="btn btn-sm modal-button bg-inherit hover:border-green-400 hover:text-white text-black hover:bg-green-400" id="btnDepositarUSD">Depositar</label>
               <input type="checkbox" id="my-modal-7" class="modal-toggle" />
               <label for="my-modal-7" class="modal cursor-pointer">
                 <label class="modal-box relative bg-white" for="">
