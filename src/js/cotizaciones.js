@@ -48,7 +48,6 @@ const cargarCotizaciones = async()=>{
           .then((response)=>response.json())
           .then((data)=>{
                 datos.push(data);
-                console.log(datos);
                 datos.forEach(dato => {
                     contenidoHTML += retornoCotizacionContenido(dato)
                 });
