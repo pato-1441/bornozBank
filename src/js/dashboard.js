@@ -45,9 +45,10 @@ btnRetirarARSConfirmar.addEventListener('click',()=>{retirarARS()});
 
 // movimientos
 class MovimientoBancario{
-    constructor(id,movimiento,debe,haber,saldo) {
+    constructor(id,movimiento,fecha,debe,haber,saldo) {
         this.id = id;
         this.movimiento = movimiento;
+        this.fecha = fecha;
         this.debe = debe;
         this.haber = haber;
         this.saldo = saldo;
@@ -63,7 +64,12 @@ const retirarARS=()=>{
     if(inputRetirarARSConfirmar.value>0&&inputRetirarARSConfirmar.value<=total){
         let balanceARSRetirado = (parseInt(inputRetirarARSConfirmar.value));
         total = total-balanceARSRetirado;
-        let movimiento = new MovimientoBancario(generadorID,'retiro',balanceARSRetirado,0,total)
+        fechaFormateo= new Date();
+        fecha = `${(fechaFormateo.getDate()).toString()+'/'+
+                  (fechaFormateo.getMonth()+1).toString()+'/'+
+                  (fechaFormateo.getFullYear())+' '+
+                  (fechaFormateo.toLocaleTimeString())}`;
+        let movimiento = new MovimientoBancario(generadorID,'retiro',fecha,balanceARSRetirado,0,total)
         movimientosARS.push(movimiento);        
         localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosARS));
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(total));
@@ -94,7 +100,12 @@ const depositarARS=()=>{
     if(inputDepositarARSConfirmar.value>1){
         let balanceARSDepositado = parseInt(inputDepositarARSConfirmar.value);
         total = total+balanceARSDepositado;
-        const movimiento = new MovimientoBancario(generadorID,'deposito',0,balanceARSDepositado,total);
+        fechaFormateo= new Date();
+        fecha = `${(fechaFormateo.getDate()).toString()+'/'+
+                  (fechaFormateo.getMonth()+1).toString()+'/'+
+                  (fechaFormateo.getFullYear())+' '+
+                  (fechaFormateo.toLocaleTimeString())}`;
+        const movimiento = new MovimientoBancario(generadorID,'deposito',fecha,0,balanceARSDepositado,total);
         movimientosARS.push(movimiento);
         localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosARS));
         localStorage.setItem('usuarioBalanceARS', JSON.stringify(total));
@@ -123,12 +134,18 @@ const btnRetirarUSDConfirmar = document.getElementById('btnRetirarUSDConfirmar')
 btnRetirarUSDConfirmar.addEventListener('click',()=>{retirarUSD()});
 
 const retirarUSD=()=>{
+    debugger
     let total = parseInt(JSON.parse(localStorage.getItem('usuarioBalanceUSD')));
     let generadorID = parseInt(Math.random()*1000);
     if(inputRetirarUSDConfirmar.value>0&&inputRetirarUSDConfirmar.value<=usuarioBalanceUSD){
         let balanceUSDRetirado = (parseInt(inputRetirarUSDConfirmar.value));
         total = total-balanceUSDRetirado;
-        let movimiento = new MovimientoBancario(generadorID,'retiro',balanceUSDRetirado,0,total)
+        fechaFormateo= new Date();
+        fecha = `${(fechaFormateo.getDate()).toString()+'/'+
+                  (fechaFormateo.getMonth()+1).toString()+'/'+
+                  (fechaFormateo.getFullYear())+' '+
+                  (fechaFormateo.toLocaleTimeString())}`;
+        let movimiento = new MovimientoBancario(generadorID,'retiro',fecha,balanceUSDRetirado,0,total)
         movimientosUSD.push(movimiento);        
         localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD));
         localStorage.setItem('usuarioBalanceUSD', JSON.stringify(total));
@@ -159,7 +176,12 @@ const depositarUSD=()=>{
     if(inputDepositarUSDConfirmar.value>1){
         let balanceUSDDepositado = parseInt(inputDepositarUSDConfirmar.value);
         total = total+balanceUSDDepositado;
-        const movimiento = new MovimientoBancario(generadorID,'deposito',0,balanceUSDDepositado,total);
+        fechaFormateo= new Date();
+        fecha = `${(fechaFormateo.getDate()).toString()+'/'+
+                  (fechaFormateo.getMonth()+1).toString()+'/'+
+                  (fechaFormateo.getFullYear())+' '+
+                  (fechaFormateo.toLocaleTimeString())}`;
+        const movimiento = new MovimientoBancario(generadorID,'deposito',fecha,0,balanceUSDDepositado,total);
         movimientosUSD.push(movimiento);
         localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD));
         localStorage.setItem('usuarioBalanceUSD', JSON.stringify(total));
@@ -214,7 +236,7 @@ const muestroMovimientos=()=>{
                                 </div>
                                 <div>
                                     <div class="font-bold capitalize">${movimiento.movimiento}</div>
-                                    <div class="text-sm opacity-50">ID: ${movimiento.id}</div>
+                                    <div class="text-sm opacity-50">${movimiento.fecha}</div>
                                 </div>
                                 </div>
                             </td>
@@ -235,7 +257,7 @@ const muestroMovimientos=()=>{
                                 </div>
                                 <div>
                                     <div class="font-bold capitalize">${movimiento.movimiento}</div>
-                                    <div class="text-sm opacity-50">ID: ${movimiento.id}</div>
+                                    <div class="text-sm opacity-50">ID: ${movimiento.fecha}</div>
                                 </div>
                                 </div>
                             </td>
