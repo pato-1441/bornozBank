@@ -84,7 +84,7 @@ const pintarContactos=()=>{
                                 <!--cuerpo del modal-->
                                 <label for="my-modal-${contador}" class="modal cursor-pointer">
                                     <label class="modal-box relative w-11/12 sm:w-8/12 h-fit max-w-5xl bg-white text-black flex flex-col" for="my-modal-${contador}" id="cuerpo-my-modal-${contador}">
-                                        <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">Editar contacto</h2>
+                                        <h2 class="text-black text-center text-2xl pt-4 w-2/3 font-semibold mx-auto">${contacto.contactFullname}</h2>
                                         <div class="form flex flex-col items-center">
                                         <!--arranca editar contacto-->
                                             <form class="form-control w-full max-w-xs mx-auto pt-4 pb-4 editContactForm">
@@ -92,7 +92,7 @@ const pintarContactos=()=>{
                                             <label class="label">
                                                 <span class="label-text text-base text-black">Nombre Completo</span>
                                             </label>                                    
-                                            <input required type="text" placeholder="Nombre completo"
+                                            <input required type="text" placeholder="Nombre completo" readonly
                                                             class="input input-bordered w-full max-w-xs bg-white" minlength="4"
                                                             maxlength="30" id="inputNameEditContact" value="${contacto.contactFullname}" />
                                             <label class="label">
@@ -103,7 +103,7 @@ const pintarContactos=()=>{
                                             <label class="label">
                                                 <span class="label-text text-base text-black">CBU</span>
                                             </label>
-                                            <input required type="text" placeholder="CBU"
+                                            <input required type="text" placeholder="CBU" readonly
                                                 class="input input-bordered w-full max-w-xs bg-white" minlength="22"
                                                 maxlength="22" id="inputCBUEditContact" value="${contacto.contactCBU}"/>
                                             <label class="label">
@@ -114,7 +114,7 @@ const pintarContactos=()=>{
                                             <label class="label">
                                                 <span class="label-text text-base text-black">Alias</span>
                                             </label>
-                                            <input required type="text" placeholder="Alias"
+                                            <input required type="text" placeholder="Alias" readonly
                                                 class="input input-bordered w-full max-w-xs bg-white" minlength="2"
                                                 maxlength="40" id="inputAliasEditContact" value="${contacto.contactAlias}"/>
                                             <label class="label">
@@ -125,14 +125,7 @@ const pintarContactos=()=>{
                                             <div class="mt-4 flex mx-auto">
                                                 <button 
                                                     type="submit"
-                                                    class="btn btn-outline w-1/2 mr-1 text-white hover:text-blue-500 hover:border-blue-500 hover:bg-inherit bg-blue-500 mb-3 submitEditContact"
-                                                    id="${contacto.id}"
-                                                >
-                                                    Guardar cambios
-                                                </button>
-                                                <button 
-                                                    type="submit"
-                                                    class="btn btn-outline w-1/2 text-white hover:text-red-600 hover:border-red-600 hover:bg-inherit bg-red-600 mb-3 submitDeleteContact"
+                                                    class="btn btn-outline w-full text-white hover:text-red-600 hover:border-red-600 hover:bg-inherit bg-red-600 mb-3 submitDeleteContact"
                                                     id="${contacto.id}"
                                                 >
                                                     Eliminar contacto

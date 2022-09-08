@@ -2429,12 +2429,6 @@ html {
   color: hsl(var(--ac) / var(--tw-text-opacity));
 }
 
-.btm-nav>*:where(.active) {
-  border-top-width: 2px;
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b1) / var(--tw-bg-opacity));
-}
-
 .btm-nav>* .label {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -3270,22 +3264,6 @@ body[dir="rtl"] .checkbox:checked,
   border-radius: var(--rounded-box, 1rem);
 }
 
-.btm-nav-xs>*:where(.active) {
-  border-top-width: 1px;
-}
-
-.btm-nav-sm>*:where(.active) {
-  border-top-width: 2px;
-}
-
-.btm-nav-md>*:where(.active) {
-  border-top-width: 2px;
-}
-
-.btm-nav-lg>*:where(.active) {
-  border-top-width: 4px;
-}
-
 .btn-sm {
   height: 2rem;
   padding-left: 0.75rem;
@@ -3526,10 +3504,6 @@ body[dir="rtl"] .checkbox:checked,
   margin-top: 1.5rem;
 }
 
-.mr-1 {
-  margin-right: 0.25rem;
-}
-
 .flex {
   display: flex;
 }
@@ -3740,11 +3714,6 @@ body[dir="rtl"] .checkbox:checked,
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-red-600 {
@@ -3966,19 +3935,9 @@ body[dir="rtl"] .checkbox:checked,
   border-color: rgb(22 78 99 / var(--tw-border-opacity));
 }
 
-.hover\:border-blue-500:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(59 130 246 / var(--tw-border-opacity));
-}
-
 .hover\:border-red-600:hover {
   --tw-border-opacity: 1;
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
-}
-
-.hover\:bg-cyan-900:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 78 99 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-red-600:hover {
@@ -4001,6 +3960,11 @@ body[dir="rtl"] .checkbox:checked,
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-cyan-900:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 78 99 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-inherit:hover {
   background-color: inherit;
 }
@@ -4008,11 +3972,6 @@ body[dir="rtl"] .checkbox:checked,
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.hover\:text-blue-500:hover {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .hover\:text-red-600:hover {
@@ -4025,25 +3984,8 @@ body[dir="rtl"] .checkbox:checked,
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.active\:rounded-box:active {
-  border-radius: var(--rounded-box, 1rem);
-}
-
-.active\:rounded:active {
-  border-radius: 0.25rem;
-}
-
-.active\:bg-cyan-900:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 78 99 / var(--tw-bg-opacity));
-}
-
 .active\:bg-inherit:active {
   background-color: inherit;
-}
-
-.active\:bg-none:active {
-  background-image: none;
 }
 
 .active\:text-green-400:active {
