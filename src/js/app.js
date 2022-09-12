@@ -77,7 +77,7 @@ const registerUser=()=>{
     alertSuccess.classList.remove('hidden');
     setTimeout(function(){
         alertSuccess.classList.add('hidden');
-        window.location.href='./dashboard.html';
+        window.location.href='./src/dashboard.html';
     }, 5000);       
 }
 
@@ -105,7 +105,7 @@ const validarLogin=()=>{
         let invitadoUser = new User(inputUsernameLogin.value,inputPasswordLogin.value,'invitado@mail.com',localStorage.setItem('usuarioBalanceARS',JSON.stringify('10000')),localStorage.setItem('usuarioBalanceUSD',JSON.stringify('10000')),localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosUSD)),localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD)));
         inputUsernameLogin.value='';
         inputPasswordLogin.value='';
-        window.location.href='./dashboard.html';
+        window.location.href='./src/dashboard.html';
         alertLoginError.classList.add('hidden'); 
         localStorage.setItem('usuario', JSON.stringify(invitadoUser));
     } else {

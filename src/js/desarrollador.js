@@ -7,5 +7,5 @@ const logOut=()=>{
     //Elimino el localStorage antes de irme
     //localStorage.removeItem('usuario');
     localStorage.clear();
-    window.location.href='./index.html';
+    window.location.href='../index.html';
 }
