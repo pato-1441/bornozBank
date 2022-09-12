@@ -48,38 +48,45 @@ contacts.push(new Contact(generadorID(),'Jesus Garcia',parseInt('000693335687246
 localStorage.setItem('contactos',JSON.stringify(contacts))
 
 // REGISTRO DE USUARIOS
+let formularioRegistro = document.getElementById("registerForm");
+formularioRegistro.addEventListener('submit',e=>{
+    e.preventDefault();
+    registeringUser(e);
+})
 
-const buttonRegister = document.getElementById("submitRegister");
-buttonRegister.addEventListener("click",()=>{registerUser()});
+const registeringUser = e =>{
+    const validacionRegisterComplete = (formularioRegistro.children[1].value!==''&&
+                                        formularioRegistro.children[3].value!==''&&
+                                        formularioRegistro.children[5].value!=='');
+    validacionRegisterComplete ? registerUser() : registerUserError();                                        
+}
 
 const registerUser=()=>{
-    let formularioRegistro = document.getElementById("registerForm");
     const alertSuccess=document.getElementById("alertRegisterSuccess");
     const alertError=document.getElementById('alertRegisterError');
+    
+    let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value,localStorage.setItem('usuarioBalanceARS',JSON.stringify('0')),localStorage.setItem('usuarioBalanceUSD',JSON.stringify('0')),localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosUSD)),localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD)));
+    //Creo el usuario y lo guardo en localStorage
+    localStorage.setItem('usuario', JSON.stringify(nuevoUser));
+    //Limpio el formulario
+    formularioRegistro.children[1].value = '';
+    formularioRegistro.children[3].value = '';
+    formularioRegistro.children[5].value = '';
+    // agrego timeout para que se borre la alerta de exito y rediriga al dashboard
+    alertError.classList.add('hidden'); 
+    alertSuccess.classList.remove('hidden');
+    setTimeout(function(){
+        alertSuccess.classList.add('hidden');
+        window.location.href='./dashboard.html';
+    }, 5000);       
+}
 
-    //Si los campos están completos
-    if(formularioRegistro.children[1].value!==''&&formularioRegistro.children[3].value!==''&&formularioRegistro.children[5].value!==''){
-        let nuevoUser = new User(formularioRegistro.children[1].value,formularioRegistro.children[3].value,formularioRegistro.children[5].value,localStorage.setItem('usuarioBalanceARS',JSON.stringify('0')),localStorage.setItem('usuarioBalanceUSD',JSON.stringify('0')),localStorage.setItem('movimientosUsuarioARS',JSON.stringify(movimientosUSD)),localStorage.setItem('movimientosUsuarioUSD',JSON.stringify(movimientosUSD)));
-        //Creo el usuario y lo guardo en localStorage
-        localStorage.setItem('usuario', JSON.stringify(nuevoUser));
-        //Limpio el formulario
-        formularioRegistro.children[1].value = '';
-        formularioRegistro.children[3].value = '';
-        formularioRegistro.children[5].value = '';
-        // agrego timeout para que se borre la alerta de exito y rediriga al dashboard
-        alertError.classList.add('hidden'); 
-        alertSuccess.classList.remove('hidden');
-        setTimeout(function(){
-            alertSuccess.classList.add('hidden');
-            window.location.href='./dashboard.html';
-        }, 5000);               
-    } else {
-        // agrego timeout para que se borre la alerta de error
-        alertError.classList.remove('hidden')
-        setTimeout(function(){
-            alertError.classList.add('hidden');
-        }, 5000);        
-    }
+const registerUserError=()=>{
+    // agrego timeout para que se borre la alerta de error
+    alertError.classList.remove('hidden')
+    setTimeout(function(){
+        alertError.classList.add('hidden');
+    }, 5000);  
 }
 // Fin Usuarios
 
